@@ -115,9 +115,9 @@
   // ── Contact grid
   document.getElementById("contact-grid").innerHTML = [
     ["email",    B.email,    "mailto:" + B.email],
-    ["github",   "github.com/vanchivikash", B.github],
+    ["github",   B.github.replace(/^https?:\/\//, ""), B.github],
     ["leetcode", "leetcode.com/u/" + B.handle, B.leetcode],
-    ["linkedin", "linkedin.com/in/vanchivikash", B.linkedin],
+    ["linkedin", B.linkedin.replace(/^https?:\/\//, ""), B.linkedin],
     ["phone",    B.phone,    "tel:" + B.phone.replace(/\s/g, "")],
     ["resume",   "resume.txt", "resume.txt"]
   ].map(([k, v, h]) => `

@@ -44,25 +44,14 @@
     s.textContent = JSON.stringify(ld);
     document.head.appendChild(s);
 
-    // ── Meta tags: SEO, OG, Twitter ───────────────────────────────────
-    const metas = [
-      ["description", B.tagline],
-      ["author", B.name],
-      ["keywords", "Vanchi Vikash, software engineer Chennai, React Next.js, fullstack developer, web security VAPT, ML engineer, portfolio, " + B.handle],
-      ["robots", "index,follow,max-snippet:-1,max-image-preview:large"],
-      ["og:title", B.name + " · " + B.role],
-      ["og:description", B.tagline],
-      ["og:type", "profile"],
-      ["og:url", B.site],
-      ["twitter:card", "summary_large_image"],
-      ["twitter:title", B.name],
-      ["twitter:description", B.tagline]
-    ];
-    for (const [k, v] of metas) {
+    // ── Supplemental meta ─────────────────────────────────────────────
+    // Core SEO + OpenGraph/Twitter tags live statically in index.html so
+    // non-JS social crawlers (LinkedIn, Slack, Twitter, Facebook) see them.
+    // Only keywords is injected here, and guarded against duplication.
+    if (!document.querySelector('meta[name="keywords"]')) {
       const m = document.createElement("meta");
-      if (k.startsWith("og:") || k.startsWith("twitter:")) m.setAttribute("property", k);
-      else m.setAttribute("name", k);
-      m.setAttribute("content", v);
+      m.setAttribute("name", "keywords");
+      m.setAttribute("content", "Vanchi Vikash, software engineer Chennai, React Next.js, fullstack developer, web security VAPT, ML engineer, portfolio, " + B.handle);
       document.head.appendChild(m);
     }
 
@@ -72,6 +61,7 @@
       ["alternate", "resume.txt", "text/plain", "Plain-text resume"]
     ];
     for (const [rel, href, type, title] of links) {
+      if (document.querySelector(`link[rel="${rel}"][href="${href}"]`)) continue; // already static
       const l = document.createElement("link");
       l.rel = rel; l.href = href; l.type = type; l.title = title;
       document.head.appendChild(l);

@@ -11,8 +11,9 @@
 - Email: vikashvanchi@gmail.com
 - Phone: +91 6382285582
 - Website: https://vanchivikash.vercel.app
-- GitHub: https://github.com/vanchivikash
+- GitHub: https://github.com/vanji-creator
 - LeetCode: https://leetcode.com/u/vanjiivikash
+- LinkedIn: https://www.linkedin.com/in/vanjivikash
 
 ## Current role
 - Title: Project Associate

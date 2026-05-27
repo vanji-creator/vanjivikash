@@ -6,6 +6,33 @@
 <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)"/>
 <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)"/>
 <title>Vanchi Vikash P M — Notebook 01</title>
+<link rel="canonical" href="https://vanchivikash.vercel.app/"/>
+
+<!-- Icons -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="manifest" href="site.webmanifest"/>
+
+<!-- Core SEO / social (static so non-JS crawlers see them) -->
+<meta name="description" content="Software engineer at C-DAC Chennai — production fullstack systems for the Government of India that pass CERT-In / VAPT audits, now building toward applied ML and LLM engineering."/>
+<meta name="author" content="Vanchi Vikash P M"/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<meta property="og:site_name" content="Vanchi Vikash"/>
+<meta property="og:type" content="profile"/>
+<meta property="og:title" content="Vanchi Vikash P M · Software Engineer"/>
+<meta property="og:description" content="Production fullstack & web security, teaching myself the next layer with ML."/>
+<meta property="og:url" content="https://vanchivikash.vercel.app/"/>
+<meta property="og:image" content="https://vanchivikash.vercel.app/og.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Vanchi Vikash P M — from production fullstack to applied ML"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Vanchi Vikash P M · Software Engineer"/>
+<meta name="twitter:description" content="Production fullstack & web security, teaching myself the next layer with ML."/>
+<meta name="twitter:image" content="https://vanchivikash.vercel.app/og.png"/>
+<meta name="twitter:image:alt" content="Vanchi Vikash P M — from production fullstack to applied ML"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&family=Archivo:wght@400;500;700&family=Archivo+Black&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -130,14 +157,22 @@
     padding: 13px;
     box-sizing: border-box;
     border-radius: 50%;
-    border: 1.5px solid var(--rule);
-    transition: transform .15s, border-color .15s;
+    /* ink contrasts the toolbar in every theme, so dark swatches stay visible */
+    border: 1.5px solid var(--ink);
+    transition: transform .15s, border-color .15s, box-shadow .15s;
   }
-  .toolbar .themes button[aria-pressed="true"] { border-color: var(--ink); transform: scale(1.08); }
-  .toolbar .themes button[data-t="paper"]    { background-color: #f6f1e7; }
-  .toolbar .themes button[data-t="mono"]     { background-color: #ffffff; border-color: #ccc; }
-  .toolbar .themes button[data-t="terminal"] { background-color: #0a0d0a; }
-  .toolbar .themes button[data-t="midnight"] { background-color: #0b1020; }
+  .toolbar .themes button[aria-pressed="true"] {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent);
+    transform: scale(1.08);
+  }
+  /* two-tone swatch: theme bg + theme accent. The accent half stays vivid
+     against any toolbar, so a swatch can't vanish when its bg matches the
+     current theme's background. */
+  .toolbar .themes button[data-t="paper"]    { background-image: linear-gradient(135deg, #f6f1e7 0 48%, #c84b0e 52% 100%); }
+  .toolbar .themes button[data-t="mono"]     { background-image: linear-gradient(135deg, #ffffff 0 48%, #0a55ff 52% 100%); }
+  .toolbar .themes button[data-t="terminal"] { background-image: linear-gradient(135deg, #0a0d0a 0 48%, #39ff7a 52% 100%); }
+  .toolbar .themes button[data-t="midnight"] { background-image: linear-gradient(135deg, #0b1020 0 48%, #00e1ff 52% 100%); }
   .toolbar .agent-pill {
     font-family: var(--mono); font-size: 10.5px; color: var(--dim);
     padding: 3px 9px; border: 1px solid var(--rule); border-radius: 999px;

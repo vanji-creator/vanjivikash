@@ -476,6 +476,7 @@
           <div class="w-carousel w-shelf-track" role="region" aria-label="Bookshelf carousel">
             ${(B.learning || []).map((b, i) => shelfCard(b, i)).join("")}
           </div>
+          <div class="w-dots">${(B.learning || []).map((_, i) => `<span${i === 0 ? ' class="on"' : ""}></span>`).join("")}</div>
         </div>
       </div>`;
     return sec;

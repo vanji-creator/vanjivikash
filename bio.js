@@ -9,9 +9,9 @@ window.BIO = {
   email: "vikashvanchi@gmail.com",
   phone: "+91 6382285582",
   site: "https://vanchivikash.vercel.app",
-  github: "https://github.com/vanchivikash",
+  github: "https://github.com/vanji-creator",
   leetcode: "https://leetcode.com/u/vanjiivikash",
-  linkedin: "https://www.linkedin.com/in/vanchivikash",
+  linkedin: "https://www.linkedin.com/in/vanjivikash",
   tagline: "I ship web systems that pass security audits — and I'm teaching myself to build the next layer with ML.",
 
   bio: [

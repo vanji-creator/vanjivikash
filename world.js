@@ -45,10 +45,8 @@
     return node;
   }
 
-  mountTrigger("pot",    { position: "absolute", top: "150px",     right: "-12px"  });
   mountTrigger("bird",   { position: "absolute", top: "16px",      right: "18px"   });
   mountTrigger("plot",   { position: "absolute", bottom: "220px",  right: "-8px"   });
-  mountTrigger("doodle", { position: "absolute", bottom: "440px",  left:  "-22px"  });
 
   /* ─── fold-back handle ─── */
   const fold = A.foldHandle();
@@ -165,13 +163,25 @@
       if (e.key === "ArrowRight") { track.scrollLeft += step; e.preventDefault(); }
       else if (e.key === "ArrowLeft") { track.scrollLeft -= step; e.preventDefault(); }
     });
-    // dot indicators
+    // dot indicators — card-width-aware so it works for both wide (projects)
+    // and narrow (shelf) cards. Dots are tappable: jump to that card.
     const dots = track.parentElement && track.parentElement.querySelector(".w-dots");
     if (dots) {
+      const stepOf = () => {
+        const first = track.firstElementChild;
+        if (!first) return Math.max(1, track.clientWidth * 0.85);
+        const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+        return Math.max(1, first.getBoundingClientRect().width + gap);
+      };
+      const last = dots.children.length - 1;
       const update = () => {
-        const i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth * 0.85));
+        const i = Math.min(last, Math.max(0, Math.round(track.scrollLeft / stepOf())));
         [...dots.children].forEach((d, j) => d.classList.toggle("on", j === i));
       };
+      [...dots.children].forEach((d, idx) => {
+        d.style.cursor = "pointer";
+        d.addEventListener("click", () => track.scrollTo({ left: idx * stepOf(), behavior: "smooth" }));
+      });
       track.addEventListener("scroll", update, { passive: true });
       update();
     }
