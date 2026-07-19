@@ -12,7 +12,7 @@
 - Phone: +91 6382285582
 - Website: https://vanchivikash.vercel.app
 - GitHub: https://github.com/vanji-creator
-- LeetCode: https://leetcode.com/u/vanjiivikash
+- LeetCode: https://leetcode.com/u/vanjivikash
 - LinkedIn: https://www.linkedin.com/in/vanjivikash
 
 ## Current role
@@ -34,6 +34,7 @@
 - Tools: Git, Postman, Webpack, VS Code, Chrome DevTools, Jest
 
 ## Projects
+- Clikk (flagship, 2026): A published Chrome extension (Manifest V3) that checks links for phishing and malware before you click, powered by an ML model that runs entirely on-device. Layered scan pipeline keeps almost all verdicts local: in-memory cache -> daily-refreshed URLhaus/OpenPhish/ThreatFox blocklists in IndexedDB -> India-specific heuristics -> on-device ML (decides alone at >=90% confidence) -> VirusTotal only for the uncertain remainder (user's own key). The shipped model is TF-IDF character n-grams (3-5) + logistic regression, chosen deliberately small to run in a browser service worker (offline, zero dependencies, ~200us/URL) — not a transformer. Honest evaluation on domain-grouped splits (no leakage): 98.6% accuracy, 0.3% false-positive rate. Weights exported to a 1.7MB sha256-fingerprinted JSON artifact and reimplemented in pure dependency-free JavaScript; Python<->JS parity proven bit-exact across the full 5,249-URL test set (worst probability difference 2e-8, zero verdict flips, identical confusion matrix). Also caught and documented a poisoned public Kaggle dataset via statistical forensics (48,009 phishing->benign vs 47,903 benign->phishing label swaps). Solo developer: product, ML pipeline, extension, deployment. Stack: Chrome MV3, JavaScript, Python (scikit-learn, pandas), IndexedDB, Supabase (in progress), VirusTotal API. Chrome Web Store: https://chromewebstore.google.com/detail/ebnadedjcjlnhbdcfogbglecfoimhmom Source: https://github.com/vanji-creator/linkguard
 - Chatflow (Nov 2025): Dual-mode red-team orchestration platform combining a real-time web terminal and visual flow builder for automated VAPT. WebSocket backend orchestrates Nmap, Nuclei, and Gobuster scans; streams stdout into structured findings. Stack: TypeScript, React, Node.js, Socket.IO, Docker. Live: https://chat-flow-app.vercel.app
 - Text Explainer / gExplain (Oct–Nov 2025): AI-powered Chrome extension with universal site compatibility (Gmail, GitHub, iframes), 4.8/5 user rating, 1000+ daily explanations at 200ms average response. Integrates Google Gemini API with rate limiting and SPA navigation detection. Stack: JS (ES6+), HTML5/CSS3, REST. Live: https://gexplain.vercel.app
 - Video Streaming App / MyStream (Apr–May 2024): YouTube Data API client with debounced/cached search autocomplete and a polling-based live chat. Stack: React, Redux Toolkit, Tailwind, React Router. Live: https://mystream-sigma.vercel.app

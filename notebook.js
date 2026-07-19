@@ -2,6 +2,61 @@
 (function () {
   const B = window.BIO;
 
+  // ── §2 flagship (Clikk) — rich dedicated render from B.projects[flagship].detail
+  function renderFlagship() {
+    const mount = document.getElementById("out-clikk");
+    const F = (B.projects || []).find(p => p.flagship);
+    if (!mount || !F || !F.detail) { if (mount) mount.remove(); return; }
+    const d = F.detail;
+
+    const pipe = d.pipeline.map(s => `
+      <div class="clikk-node">
+        <div class="pn">${s.n}</div>
+        <div class="pt">${s.title}</div>
+        <div class="pd">${s.note}</div>
+      </div>`).join('<span class="clikk-arrow" aria-hidden="true">→</span>');
+
+    const shots = d.shots.map(s => `
+      <figure class="clikk-shot">
+        <img src="${s.src}" alt="${s.alt}" loading="lazy" onerror="this.closest('.clikk-shot').style.display='none'">
+        <figcaption>${s.caption}</figcaption>
+      </figure>`).join("");
+
+    const journey = d.mlJourney.map(s => `
+      <div class="clikk-stage">
+        <div class="st-tag">${s.stage}</div>
+        <h4>${s.title}</h4>
+        <p>${s.body}</p>
+      </div>`).join("");
+
+    mount.innerHTML = `
+      <p class="clikk-lead">${d.oneLiner} <b>Live on the Chrome Web Store.</b></p>
+      <p class="clikk-role">${d.role}</p>
+      <div class="clikk-cta">
+        <a class="clikk-install" href="${d.cwsUrl}" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Live on the Chrome Web Store — install ↗</a>
+        <a class="clikk-ghost" href="${d.github}" target="_blank" rel="noopener">Source + ML pipeline ↗</a>
+      </div>
+
+      <div class="clikk-h">What it does</div>
+      <ul class="clikk-what">${d.whatItDoes.map(w => `<li>${w}</li>`).join("")}</ul>
+
+      <div class="clikk-h">In the browser</div>
+      <div class="clikk-shots">${shots}</div>
+
+      <div class="clikk-h">The ML journey</div>
+      <div class="clikk-journey">${journey}</div>
+
+      <div class="clikk-h">Scan pipeline — cheap &amp; local first, network last</div>
+      <div class="clikk-pipe">${pipe}</div>
+      <p class="clikk-pipe-note">Each layer only defers to the next when it can't decide — so almost every verdict is reached on-device, and the network is the last resort.</p>
+
+      <div class="clikk-h">By the numbers</div>
+      <div class="clikk-metrics">${d.metrics.map(m => `<div class="stat"><div class="v">${m.v}</div><div class="k">${m.k}</div></div>`).join("")}</div>
+
+      <div class="clikk-h">Stack</div>
+      <div class="clikk-stack">${d.stackLine}</div>`;
+  }
+
   // ── Header link
   document.getElementById("lc-link").href = B.leetcode;
   document.getElementById("lc-link").textContent = "leetcode.com/u/" + B.handle;
@@ -10,9 +65,10 @@
   document.getElementById("abstract-body").innerHTML =
     `We document the engineering practice and active learning trajectory of <b>${B.name}</b>, a software engineer based in ${B.location}. ` +
     `§1 surveys current production deliverables for the Government of India, where the author serves as ${B.experience[0].title.toLowerCase()} at ${B.experience[0].org}. ` +
-    `§2 examines three released projects spanning red-team orchestration, LLM-augmented browser tooling, and real-time media UX. ` +
-    `§3 reports LeetCode submission activity over the last 365 days. ` +
-    `§4 outlines the active ML/AI reading program. ` +
+    `§2 profiles the flagship project — <b>Clikk</b>, a published Chrome extension whose phishing/malware detection runs on an on-device ML model. ` +
+    `§3 examines three further released projects spanning red-team orchestration, LLM-augmented browser tooling, and real-time media UX. ` +
+    `§4 reports LeetCode submission activity over the last 365 days. ` +
+    `§5 outlines the active ML/AI reading program. ` +
     `Throughout, this notebook is structured for parsing by both humans and autonomous agents — see <a href="llms.txt" target="_blank">/llms.txt</a>.`;
 
   // ── Out[1] — whoami
@@ -37,9 +93,12 @@
     <ul class="bullets">${e.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
     <div class="stack">${e.stack.map(s => `<span class="tag">${s}</span>`).join("")}</div>`;
 
-  // ── Out[3] — projects
+  // ── Out[3] (§2) — flagship: Clikk
+  renderFlagship();
+
+  // ── Out[3] — released projects (flagship excluded; it has its own section)
   document.getElementById("out-3").innerHTML = `
-    <div class="projects">${B.projects.map((p, i) => `
+    <div class="projects">${B.projects.filter(p => !p.flagship).map((p, i) => `
       <div class="proj">
         <div class="idx">[P${String(i + 1).padStart(2, "0")}]</div>
         <div>

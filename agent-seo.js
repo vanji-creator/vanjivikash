@@ -39,6 +39,21 @@
         }
       ]
     };
+
+    // Flagship project as a SoftwareApplication node (Clikk).
+    const clikk = (B.projects || []).find(p => p.flagship);
+    if (clikk) {
+      ld["@graph"].push({
+        "@type": "SoftwareApplication",
+        "@id": B.site + "#clikk",
+        "name": clikk.name,
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome",
+        "url": clikk.live,
+        "author": { "@id": B.site + "#person" },
+        "description": clikk.one
+      });
+    }
     const s = document.createElement("script");
     s.type = "application/ld+json";
     s.textContent = JSON.stringify(ld);

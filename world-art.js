@@ -329,6 +329,13 @@
   /* ─────────── PROJECT CARD ART ─────────── */
   function projectArt(slug, name) {
     const key = (slug || name || "").toLowerCase();
+    if (key.includes("clikk") || key.includes("guard")) return `
+      <svg viewBox="0 0 320 200" filter="url(#w-grain)">
+        <rect class="w-fill-buff" width="320" height="200"/>
+        <path class="w-fill-card w-stroke-ink" d="M160 34 L232 60 V108 C232 150 198 172 160 186 C122 172 88 150 88 108 V60 Z" stroke-width="1.6"/>
+        <path class="w-stroke-coral" d="M132 104 l20 20 l40 -46" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="w-fill-accent" cx="160" cy="150" r="5"/>
+      </svg>`;
     if (key.includes("chat") || key.includes("flow") || key.includes("red")) return `
       <svg viewBox="0 0 320 200" filter="url(#w-grain)">
         <rect class="w-fill-bone" width="320" height="200"/>
@@ -393,7 +400,7 @@
     sec.innerHTML = `
       <header class="w-scene-head w-reveal">
         <p class="w-eyebrow">scene 02 · the workshop</p>
-        <h2>three projects, three live links.</h2>
+        <h2>four shipped, four live links.</h2>
         <p class="w-scene-sub">swipe sideways — or click and drag — to walk the room.</p>
       </header>
       <div class="w-carousel-wrap">

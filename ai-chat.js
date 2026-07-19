@@ -12,6 +12,7 @@ ${JSON.stringify({
   tagline: B.tagline, bio: B.bio,
   experience: B.experience,
   projects: B.projects.map(p => ({ name: p.name, kind: p.kind, date: p.date, stack: p.stack, live: p.live, one: p.one, bullets: p.bullets })),
+  flagship: (() => { const f = B.projects.find(p => p.flagship); if (!f || !f.detail) return undefined; const { shots, ...rest } = f.detail; return rest; })(),
   skills: B.skills,
   learning: B.learning,
   education: B.education,
@@ -81,7 +82,7 @@ ${JSON.stringify({
     };
 
     cmds["projects"] = {
-      desc: "shipped projects (3)",
+      desc: "shipped projects (4)",
       run() {
         return B.projects.map((p, i) => `
           <div style="${i ? "margin-top:10px;padding-top:10px;border-top:1px dashed " + border : ""}">

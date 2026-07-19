@@ -523,6 +523,92 @@
   [data-ask-chat] {
     bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
   }
+
+  /* ───────── §2 FLAGSHIP (Clikk) ───────── */
+  .clikk-lead { font-size: 16.5px; line-height: 1.6; margin: 0 0 12px; }
+  .clikk-role { font-family: var(--mono); font-size: 11px; color: var(--dim); margin: 0 0 14px; }
+  .clikk-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 4px; }
+  .clikk-install, .clikk-ghost {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 15px; border-radius: 6px; border: 1px solid var(--rule);
+  }
+  .clikk-install { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .clikk-install:hover { background: color-mix(in srgb, var(--accent) 86%, #000); }
+  .clikk-install .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--bg);
+    box-shadow: 0 0 0 0 var(--bg); animation: pulse 2.2s ease-in-out infinite;
+  }
+  .clikk-ghost { background: transparent; color: var(--ink); }
+  .clikk-ghost:hover { border-color: var(--accent); color: var(--accent); background: transparent; }
+
+  .clikk-h {
+    font-family: var(--mono); font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: .14em; color: var(--accent);
+    margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule);
+  }
+
+  .clikk-what { padding-left: 20px; margin: 0; }
+  .clikk-what li { margin: 0 0 9px; font-size: 15px; line-height: 1.6; }
+  .clikk-what li::marker { color: var(--accent); content: "▸  "; }
+
+  .clikk-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 4px 0 0; }
+  .clikk-shot { margin: 0; }
+  .clikk-shot img {
+    width: 100%; height: 210px; object-fit: contain; object-position: center;
+    background: #0c110f; border: 1px solid var(--rule); border-radius: 6px; padding: 8px;
+  }
+  .clikk-shot figcaption {
+    font-family: var(--serif); font-style: italic; font-size: 12.5px; line-height: 1.45;
+    color: var(--dim); margin-top: 8px;
+  }
+
+  .clikk-journey { margin: 4px 0 0; }
+  .clikk-stage { position: relative; padding: 0 0 20px 26px; border-left: 2px solid var(--rule); }
+  .clikk-stage:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .clikk-stage::before {
+    content: ""; position: absolute; left: -7px; top: 3px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 0 3px var(--output-bg);
+  }
+  .clikk-stage .st-tag {
+    font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--accent);
+  }
+  .clikk-stage h4 { font-family: var(--serif); font-weight: 600; font-size: 16px; margin: 2px 0 6px; }
+  .clikk-stage p { margin: 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, var(--ink) 84%, var(--dim)); }
+
+  .clikk-pipe {
+    display: flex; align-items: stretch; gap: 0;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px;
+  }
+  .clikk-pipe::-webkit-scrollbar { height: 6px; }
+  .clikk-pipe::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+  .clikk-node {
+    flex: 0 0 auto; width: 174px;
+    border: 1px solid var(--rule); border-radius: 6px;
+    background: color-mix(in srgb, var(--accent) 5%, var(--output-bg));
+    padding: 11px 13px;
+  }
+  .clikk-node .pn { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--accent); }
+  .clikk-node .pt { font-family: var(--sans); font-weight: 600; font-size: 13px; margin: 3px 0 4px; }
+  .clikk-node .pd { font-size: 12.5px; line-height: 1.5; color: var(--dim); }
+  .clikk-arrow { flex: 0 0 auto; align-self: center; padding: 0 7px; font-family: var(--mono); font-size: 15px; color: var(--accent); }
+  .clikk-pipe-note { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--dim); margin: 6px 0 0; }
+
+  .clikk-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 16px; margin: 4px 0 0; }
+
+  .clikk-stack {
+    font-family: var(--mono); font-size: 11.5px; line-height: 1.7; color: var(--dim);
+    margin: 4px 0 0; padding: 12px 14px;
+    background: var(--code-bg); border: 1px solid var(--rule); border-radius: 4px;
+  }
+
+  @media (max-width: 720px) {
+    .clikk-shots { grid-template-columns: 1fr; }
+    .clikk-shot img { height: 260px; }
+    .clikk-metrics { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body style="font-family: Newsreader">
@@ -535,10 +621,11 @@
   <nav class="nav">
     <a href="#abstract">abstract</a>
     <a href="#experience">§1</a>
-    <a href="#projects">§2</a>
-    <a href="#leetcode">§3</a>
-    <a href="#learning">§4</a>
-    <a href="#contact">§5</a>
+    <a href="#flagship">§2</a>
+    <a href="#projects">§3</a>
+    <a href="#leetcode">§4</a>
+    <a href="#learning">§5</a>
+    <a href="#contact">§6</a>
   </nav>
   <div class="themes" role="radiogroup" aria-label="Theme">
     <button data-t="paper"    aria-pressed="true"  title="Paper"></button>
@@ -561,7 +648,7 @@
     Vanchi Vikash P. M.<sup>1</sup>
   </p>
   <p class="affil">
-    <sup>1</sup>C-DAC Chennai · <a href="mailto:vikashvanchi@gmail.com">vikashvanchi@gmail.com</a> · <a id="lc-link" href="#" target="_blank" rel="noopener">leetcode.com/u/vanjiivikash</a>
+    <sup>1</sup>C-DAC Chennai · <a href="mailto:vikashvanchi@gmail.com">vikashvanchi@gmail.com</a> · <a id="lc-link" href="#" target="_blank" rel="noopener">leetcode.com/u/vanjivikash</a>
   </p>
 
   <section class="abstract" id="abstract">
@@ -591,45 +678,56 @@ me.<span class="fn">whoami</span>()</div>
     <div class="out" data-n="2" id="out-2"></div>
   </div>
 
-  <!-- ───── §2 Projects ───── -->
-  <h2 class="sec" id="projects"><span class="num">§2</span> released work</h2>
+  <!-- ───── §2 Flagship: Clikk ───── -->
+  <h2 class="sec" id="flagship"><span class="num">§2</span> flagship — Clikk</h2>
 
-  <div class="cell" data-cell="3">
+  <div class="cell" data-cell="clikk">
     <div class="gutter"><span class="label">In&nbsp;[3]:</span><button class="run" data-run>▸ re-run</button></div>
-<div class="code"><span class="kw">for</span> p <span class="kw">in</span> me.projects:
-    p.<span class="fn">render</span>()</div>
-    <div class="out" data-n="3" id="out-3"></div>
+<div class="code"><span class="com"># the one I'm proudest of — a shipped extension with an on-device ML model.</span>
+clikk = me.flagship
+clikk.<span class="fn">render</span>(pinned=<span class="kw">True</span>)</div>
+    <div class="out" data-n="3" id="out-clikk"></div>
   </div>
 
-  <!-- ───── §3 Skills + LeetCode ───── -->
-  <h2 class="sec" id="leetcode"><span class="num">§3</span> stack &amp; submission activity</h2>
+  <!-- ───── §3 Projects ───── -->
+  <h2 class="sec" id="projects"><span class="num">§3</span> released work</h2>
+
+  <div class="cell" data-cell="3">
+    <div class="gutter"><span class="label">In&nbsp;[4]:</span><button class="run" data-run>▸ re-run</button></div>
+<div class="code"><span class="kw">for</span> p <span class="kw">in</span> me.projects:
+    p.<span class="fn">render</span>()</div>
+    <div class="out" data-n="4" id="out-3"></div>
+  </div>
+
+  <!-- ───── §4 Skills + LeetCode ───── -->
+  <h2 class="sec" id="leetcode"><span class="num">§4</span> stack &amp; submission activity</h2>
 
   <div class="cell" data-cell="4">
-    <div class="gutter"><span class="label">In&nbsp;[4]:</span><button class="run" data-run>▸ re-run</button></div>
+    <div class="gutter"><span class="label">In&nbsp;[5]:</span><button class="run" data-run>▸ re-run</button></div>
 <div class="code"><span class="kw">import</span> pandas <span class="kw">as</span> pd
 pd.<span class="fn">DataFrame</span>(me.skills).<span class="fn">T</span></div>
-    <div class="out" data-n="4" id="out-4"></div>
+    <div class="out" data-n="5" id="out-4"></div>
   </div>
 
   <div class="cell" data-cell="5">
-    <div class="gutter"><span class="label">In&nbsp;[5]:</span><button class="run" data-run>▸ re-run</button></div>
+    <div class="gutter"><span class="label">In&nbsp;[6]:</span><button class="run" data-run>▸ re-run</button></div>
 <div class="code"><span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
 fig, ax = plt.<span class="fn">subplots</span>(figsize=(<span class="str">10</span>, <span class="str">2</span>))
 ax.<span class="fn">imshow</span>(me.leetcode.<span class="fn">heatmap</span>(days=<span class="str">365</span>), cmap=<span class="str">"theme"</span>)
 plt.<span class="fn">show</span>()</div>
-    <div class="out" data-n="5" id="out-5"></div>
+    <div class="out" data-n="6" id="out-5"></div>
   </div>
 
-  <!-- ───── §4 Currently learning ───── -->
-  <h2 class="sec" id="learning"><span class="num">§4</span> currently learning</h2>
+  <!-- ───── §5 Currently learning ───── -->
+  <h2 class="sec" id="learning"><span class="num">§5</span> currently learning</h2>
   <p style="margin: -4px 0 14px; font-style: italic; color: var(--dim); font-size: 14.5px;">
     The next bibliography I'm working through, in roughly the order I'm tackling it.
     These are the rails for moving from web apps to applied ML/agent work.
   </p>
   <ol class="refs" id="refs-list"></ol>
 
-  <!-- ───── §5 Contact ───── -->
-  <h2 class="sec" id="contact"><span class="num">§5</span> reproducibility</h2>
+  <!-- ───── §6 Contact ───── -->
+  <h2 class="sec" id="contact"><span class="num">§6</span> reproducibility</h2>
   <p style="font-size: 15.5px; line-height: 1.65; margin-bottom: 8px;">
     Everything described above is reproducible from the public artifacts below.
     The fastest channel for new conversations — about roles, contracts, or collaboration — is email.
