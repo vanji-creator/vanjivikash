@@ -10,7 +10,7 @@
 - Location: Chennai, India
 - Email: vikashvanchi@gmail.com
 - Phone: +91 6382285582
-- Website: https://vanchivikash.vercel.app
+- Website: https://vanjivikash.vercel.app
 - GitHub: https://github.com/vanji-creator
 - LeetCode: https://leetcode.com/u/vanjivikash
 - LinkedIn: https://www.linkedin.com/in/vanjivikash

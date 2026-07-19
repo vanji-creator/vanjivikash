@@ -49,7 +49,7 @@ Everything else is up for replacement.
 **Replace** the current `index.html` (the design canvas):
 - Move all content of `notebook.html` into `index.html`. Do not carry over any styles or markup from the old `index.html` — none of the design-canvas page-level CSS, `body { overflow: hidden }`, `.topnote`, `.jumpbar`, `.dc-*` rules, or the mobile fallback stack. Start from `notebook.html` as-is.
 - Delete `notebook.html` (or leave a one-line redirect for old links).
-- Update `bio.js` `site:` field if needed (`https://vanchivikash.vercel.app` still works as root).
+- Update `bio.js` `site:` field if needed (`https://vanjivikash.vercel.app` still works as root).
 - Strip the `chrome.js` script tag. Keep `world-cta.js`.
 - `agent-seo.js` injects JSON-LD + meta + alternate links on its own (called from `notebook.js:181`). No additional inline `<script type="application/ld+json">` block needs to be carried into the new `index.html`.
 

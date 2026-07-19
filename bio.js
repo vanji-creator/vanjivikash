@@ -8,7 +8,7 @@ window.BIO = {
   location: "Chennai, India",
   email: "vikashvanchi@gmail.com",
   phone: "+91 6382285582",
-  site: "https://vanchivikash.vercel.app",
+  site: "https://vanjivikash.vercel.app",
   github: "https://github.com/vanji-creator",
   leetcode: "https://leetcode.com/u/vanjivikash",
   linkedin: "https://www.linkedin.com/in/vanjivikash",
