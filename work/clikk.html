@@ -148,10 +148,8 @@ try {
       </div>
 
       <figure class="wide">
-        <div class="ph__box" style="--ar: 16 / 9">
-          <span class="ph__size">1616 × 909 · export 2× · chart</span>
-          <span class="ph__brief">The label-swap forensics: overlap between the Kaggle dataset and the trusted feeds, split into agree / disagree, with the two disagreement directions at 48,009 and 47,903 shown as near-mirror bars. The symmetry is the whole argument — make it the thing the eye lands on.</span>
-        </div>
+        <img class="diagram" src="/assets/clikk-forensics.svg" width="1616" height="909" loading="lazy" decoding="async"
+             alt="Label-swap forensics on a widely used public Kaggle malicious-URL dataset, cross-checked against URLhaus, OpenPhish and ThreatFox. Of the URLs that appear in both, about 99.99% disagree with the feeds and only about 0.01% agree. The disagreement splits into two near-identical bars: 48,009 URLs the dataset calls phishing and the feeds call benign, and 47,903 the dataset calls benign and the feeds call phishing. The two ends differ by 106 URLs, or 0.22% of either side. The closing note reads: noise leans one way, a swap is symmetric — honest-but-noisy labelling produces one-directional bias, not this."/>
         <figcaption>Why it reads as corruption rather than noise: the disagreement is almost perfectly symmetric.</figcaption>
       </figure>
 
@@ -181,10 +179,8 @@ try {
       </div>
 
       <figure class="wide">
-        <div class="ph__box" style="--ar: 3 / 2">
-          <span class="ph__size">1616 × 1077 · export 2× · flow diagram</span>
-          <span class="ph__brief">The five-layer scan pipeline as a funnel, showing roughly what share of URLs each layer resolves and how few reach the network call at the bottom. The visual argument is that the last box is almost never used.</span>
-        </div>
+        <img class="diagram" src="/assets/clikk-pipeline.svg" width="1616" height="1077" loading="lazy" decoding="async"
+             alt="The scan pipeline drawn as a five-layer funnel, each layer narrowing and passing on only what it cannot decide. One, an in-memory cache with a one-hour TTL, so a link scanned once is not scanned again. Two, local blocklists from URLhaus, OpenPhish, ThreatFox and Community, held in IndexedDB, refreshed daily and matched in memory. Three, heuristics for India-specific scam patterns, sketchy TLDs and subdomain depth over four labels. Four, the on-device model — TF-IDF plus logistic regression over 57,750 features, about 200 microseconds per URL, deciding alone at 90% confidence or above. Five, far narrower than the rest, the VirusTotal API: the only network call, on the user's own key, and almost never reached. A note states that band widths are illustrative because per-layer resolve rates are not measured, and that links to around fifty trusted domains never enter the pipeline at all."/>
         <figcaption>Each layer only passes on what it cannot decide. The network is the last resort, not the default.</figcaption>
       </figure>
 

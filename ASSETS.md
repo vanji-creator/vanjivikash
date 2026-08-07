@@ -256,7 +256,13 @@ as the climb."*
 
 ---
 
-### B5 · `clikk-forensics.svg` — 1616 × 909 (16:9)
+### B5 · `clikk-forensics.svg` — ✅ DONE
+
+Delivered 2026-08-07, installed and live. Verified: 48,009 − 47,903 = 106, their sum
+is 95,912, and 106/48,009 = 0.22%, all as drawn. Direction matches the source: the
+first figure is the dataset saying phishing where the feeds say benign.
+
+#### Spec — 1616 × 909 (16:9)
 
 > Draw the dataset label-swap forensics. The subject is the overlap between a widely
 > used public Kaggle malicious-URL dataset and trusted primary threat feeds
@@ -275,7 +281,19 @@ perfectly symmetric."*
 
 ---
 
-### B6 · `clikk-pipeline.svg` — 1616 × 1077 (3:2)
+### B6 · `clikk-pipeline.svg` — ✅ DONE
+
+Delivered 2026-08-07, installed and live. It carries its own honesty note — *"band
+widths are illustrative, per-layer resolve rates are not measured in the repository"* —
+which is the right call and matches the rest of the site.
+
+**Unverified against anything in this repo**, so please confirm from the LinkGuard
+source: the 57,750 feature count, the VirusTotal free-tier limits (4/min, 500/day),
+"subdomain depth over 4 labels", "Community" as a fourth blocklist feed, and the ~50
+trusted domains that bypass the pipeline. None of these appear in the résumé,
+`llms.txt`, or the old `bio.js`.
+
+#### Spec — 1616 × 1077 (3:2)
 
 > Draw the five-layer on-device scan pipeline as a funnel, where each layer only passes
 > on what it cannot decide:
