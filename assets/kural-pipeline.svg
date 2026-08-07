@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg style="color:#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1616 1212" width="1616" height="1212">
+        <defs>
+          <marker id="f3a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 z" style="fill: currentcolor;"/>
+          </marker>
+        </defs>
+
+        <text x="100" y="56" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 34px; font-weight: 600;">The query pipeline — both ends move toward each other</text>
+
+        <rect x="568" y="100" width="480" height="76" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="594" y="142" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; opacity: 0.45;">1</text>
+        <text x="808" y="150" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 34px; text-anchor: middle;">question, as typed</text>
+        <path d="M808,176 V210" marker-end="url(#f3a)" style="stroke: currentcolor; stroke-width: 2;"/>
+
+        <polygon points="638,274 808,216 978,274 808,332" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="808" y="286" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 30px; text-anchor: middle;">Tamil script?</text>
+        <text x="600" y="204" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; opacity: 0.45;">2</text>
+
+        <path d="M638,274 H400 V360" marker-end="url(#f3a)" style="fill: none; stroke: currentcolor; stroke-width: 3.6;"/>
+        <path d="M978,274 H1216 V360" marker-end="url(#f3a)" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="620" y="256" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: end;">yes</text>
+        <text x="996" y="256" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px;">no</text>
+
+        <rect x="150" y="366" width="500" height="100" style="fill: none; stroke: currentcolor; stroke-width: 3.6;"/>
+        <text x="400" y="406" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">searched as typed</text>
+        <text x="400" y="442" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">rewrite skipped — the UI says so</text>
+        <text x="150" y="330" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; opacity: 0.75;">Tamil branch</text>
+
+        <rect x="966" y="366" width="500" height="100" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="1216" y="406" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">HyDE rewrite</text>
+        <text x="1216" y="442" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">Sarvam-105B · ~0.5 s</text>
+
+        <path d="M400,466 V504 H1216 V466" style="stroke: currentcolor; stroke-width: 2; fill: none;"/>
+        <path d="M400,466 V504 H808" style="stroke: currentcolor; stroke-width: 3.6; fill: none;"/>
+        <path d="M808,504 V536" marker-end="url(#f3a)" style="stroke: currentcolor; stroke-width: 2;"/>
+
+        <rect x="210" y="540" width="1196" height="162" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="236" y="582" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; opacity: 0.45;">3</text>
+        <text x="808" y="592" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 34px; text-anchor: middle;">stage one scores all 1,330 verses exactly</text>
+        <text x="808" y="650" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 46px; text-anchor: middle;">0.7 × meaning + 0.3 × keyword</text>
+        <text x="808" y="688" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; text-anchor: middle; opacity: 0.6;">meaning = 0.5 × verse + 0.5 × chapter</text>
+        <path d="M808,702 V736" marker-end="url(#f3a)" style="stroke: currentcolor; stroke-width: 2;"/>
+
+        <rect x="508" y="740" width="600" height="60" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="534" y="778" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; opacity: 0.45;">4</text>
+        <text x="808" y="780" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">top 50 candidates</text>
+        <path d="M808,800 V834" marker-end="url(#f3a)" style="stroke: currentcolor; stroke-width: 2;"/>
+
+        <rect x="310" y="838" width="996" height="114" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="336" y="880" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; opacity: 0.45;">5</text>
+        <text x="808" y="878" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 34px; text-anchor: middle;">cross-encoder rerank</text>
+        <text x="808" y="912" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle;">bge-reranker-v2-m3</text>
+        <text x="808" y="942" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.6;">reads question and verse together</text>
+        <path d="M808,952 V986" marker-end="url(#f3a)" style="stroke: currentcolor; stroke-width: 2;"/>
+
+        <rect x="508" y="990" width="600" height="60" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="534" y="1028" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; opacity: 0.45;">6</text>
+        <text x="808" y="1030" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">top 5 shown</text>
+        <path d="M808,1050 V1084" marker-end="url(#f3a)" style="stroke: currentcolor; stroke-width: 2;"/>
+
+        <rect x="310" y="1088" width="996" height="100" style="fill: none; stroke: currentcolor; stroke-width: 2;"/>
+        <text x="336" y="1130" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 28px; opacity: 0.45;">7</text>
+        <text x="808" y="1132" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 34px; text-anchor: middle;">answer written from those five only</text>
+        <text x="808" y="1170" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">every citation checked against them</text>
+      </svg>

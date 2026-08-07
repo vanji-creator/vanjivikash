@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Work — Vanchi Vikash P M</title>
+<link rel="canonical" href="https://vanjivikash.vercel.app/work/"/>
+<meta name="description" content="Every project, with what each one measured — Kural RAG, Clikk, the Supply Order Monitoring Portal, Chatflow, Text Explainer and MyStream."/>
+<script>
+try {
+  var t = localStorage.getItem("ledger.theme");
+  if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.dataset.theme = t;
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ledger.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="shell">
+
+  <aside class="ident">
+    <a class="ident__name" href="/">Vanchi Vikash P M</a>
+    <p class="ident__role">Applied ML and retrieval.<br>Chennai, India.</p>
+    <nav class="ident__nav" aria-label="Sections">
+      <a href="/">Home</a>
+      <a href="/work/" aria-current="page">All work</a>
+      <a href="/about.html">About</a>
+      <a href="/now.html">Now</a>
+      <a href="/resume.html">Résumé</a>
+    </nav>
+    <div class="ident__links">
+      <a href="https://github.com/vanji-creator" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/vanjivikash" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://leetcode.com/u/vanjivikash" target="_blank" rel="noopener">LeetCode</a>
+      <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      <button class="lamp" type="button" data-theme-toggle aria-pressed="false" title="Switch theme">
+        <svg class="lamp__bulb" viewBox="0 0 40 46" width="34" height="39" aria-hidden="true" focusable="false">
+          <g class="lamp__rays">
+            <line x1="20" y1="41.5" x2="20" y2="45"/>
+            <line x1="30.6" y1="36.4" x2="33.2" y2="39"/>
+            <line x1="9.4" y1="36.4" x2="6.8" y2="39"/>
+            <line x1="34" y1="27" x2="37.6" y2="27"/>
+            <line x1="6" y1="27" x2="2.4" y2="27"/>
+          </g>
+          <path class="lamp__cap" d="M15.5 3.2h9v7.3h-9z"/>
+          <line class="lamp__thread" x1="15.5" y1="5.9" x2="24.5" y2="5.9"/>
+          <line class="lamp__thread" x1="15.5" y1="8.4" x2="24.5" y2="8.4"/>
+          <path class="lamp__neck" d="M16.4 10.5 16 16M23.6 10.5 24 16"/>
+          <circle class="lamp__glass" cx="20" cy="27" r="11.4"/>
+          <path class="lamp__filament" d="M15.6 29.4q2.2-6 4.4 0t4.4 0"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="sheet" id="main">
+
+    <div class="page-head">
+      <p class="page-head__kicker">Index</p>
+      <h1>Work</h1>
+      <p class="page-head__sub">Six things, newest first. The three at the top have case studies because there is something measured to report; the three below it are web work that shipped and stayed up.</p>
+    </div>
+
+    <section class="section">
+      <p class="kicker">Measured</p>
+
+      <a class="index__row" href="/work/kural-rag.html">
+        <div>
+          <div class="index__name">Kural RAG</div>
+          <p class="index__what">Cross-lingual retrieval over 1,330 classical Tamil verses, citing the exact verses behind every claim. Hybrid dense and sparse retrieval, cross-encoder reranking, HyDE query rewriting.</p>
+        </div>
+        <div class="index__meta">2026 · solo<br>44 → 97 out of 100<br>78% / 56%</div>
+      </a>
+
+      <a class="index__row" href="/work/clikk.html">
+        <div>
+          <div class="index__name">Clikk</div>
+          <p class="index__what">On-device malicious link detection, published on the Chrome Web Store. Most URLs never leave the browser. The interesting part is the transformer I discarded and why I could prove it was right to.</p>
+        </div>
+        <div class="index__meta">2026 · solo<br>98.6% at 0.3% FPR<br>~0.2 ms per URL</div>
+      </a>
+
+      <a class="index__row" href="/work/somp.html">
+        <div>
+          <div class="index__name">Supply Order Monitoring Portal</div>
+          <p class="index__what">A national C-DAC platform for delivery-delay prediction, demand forecasting and defaulter identification. FastAPI backend, analytics layer, external logistics integration, release engineering.</p>
+        </div>
+        <div class="index__meta">2024– · at C-DAC<br>2,500+ users<br>99.9% uptime</div>
+      </a>
+    </section>
+
+    <section class="section section--last">
+      <p class="kicker">Shipped, unmeasured</p>
+      <div class="column">
+        <p class="dim">These have no evaluation numbers, so this page gives them none. They are here because they are real, they are online, and the code is readable.</p>
+      </div>
+
+      <a class="index__row" href="https://chat-flow-app.vercel.app/" target="_blank" rel="noopener">
+        <div>
+          <div class="index__name">Chatflow</div>
+          <p class="index__what">A dual-mode red-team platform: a live web terminal and a visual flow builder over one engine. A WebSocket backend orchestrates Nmap, Nuclei and Gobuster and parses their raw stdout into structured findings.</p>
+        </div>
+        <div class="index__meta">Nov 2025<br>TypeScript · React<br>Node · Socket.IO · Docker</div>
+      </a>
+
+      <a class="index__row" href="https://gexplain.vercel.app/" target="_blank" rel="noopener">
+        <div>
+          <div class="index__name">Text Explainer</div>
+          <p class="index__what">A Chrome extension that explains any selected text in place, built to survive the awkward cases — Gmail, GitHub, nested iframes, and single-page apps that never reload.</p>
+        </div>
+        <div class="index__meta">Oct–Nov 2025<br>JavaScript · Gemini API<br>Chrome APIs</div>
+      </a>
+
+      <a class="index__row" href="https://mystream-sigma.vercel.app/" target="_blank" rel="noopener">
+        <div>
+          <div class="index__name">MyStream</div>
+          <p class="index__what">A YouTube Data API client with debounced search, cached autocomplete and a polling-based live chat. The first thing I built that had to stay responsive while the network did not.</p>
+        </div>
+        <div class="index__meta">Apr–May 2024<br>React · Redux Toolkit<br>Tailwind</div>
+      </a>
+
+      <a class="backlink" href="/">← Home</a>
+    </section>
+
+    <footer class="colophon">
+      <span>© 2026 Vanchi Vikash P M · Chennai, India</span>
+      <span>
+        <a href="/resume.html">Résumé</a> ·
+        <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      </span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="/ledger.js" defer></script>
+</body>
+</html>

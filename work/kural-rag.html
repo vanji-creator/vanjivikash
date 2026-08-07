@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Kural RAG — Vanchi Vikash P M</title>
+<link rel="canonical" href="https://vanjivikash.vercel.app/work/kural-rag.html"/>
+<meta name="description" content="Cross-lingual retrieval over 1,330 classical Tamil verses. Retrieval went from 44 to 97 out of 100 across six independently measured changes — and here is what I still can't claim."/>
+<script>
+try {
+  var t = localStorage.getItem("ledger.theme");
+  if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.dataset.theme = t;
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ledger.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="shell">
+
+  <aside class="ident">
+    <a class="ident__name" href="/">Vanchi Vikash P M</a>
+    <p class="ident__role">Applied ML and retrieval.<br>Chennai, India.</p>
+    <nav class="ident__nav" aria-label="On this page">
+      <a class="ident__back" href="/work/">All work</a>
+      <a href="#what">What it does</a>
+      <a href="#harness">The harness came first</a>
+      <a href="#funnel">The funnel</a>
+      <a href="#gains">Every gain measured</a>
+      <a href="#declined">What I don't claim</a>
+      <a href="#wrong">Two things that were wrong</a>
+      <a href="#cause">Correlation, then intervention</a>
+      <a href="#stands">Where it stands</a>
+    </nav>
+    <p class="ident__label">Elsewhere</p>
+    <div class="ident__links">
+      <a href="/work/">All work</a>
+      <a href="/about.html">About</a>
+      <a href="/resume.html">Résumé</a>
+      <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      <button class="lamp" type="button" data-theme-toggle aria-pressed="false" title="Switch theme">
+        <svg class="lamp__bulb" viewBox="0 0 40 46" width="34" height="39" aria-hidden="true" focusable="false">
+          <g class="lamp__rays">
+            <line x1="20" y1="41.5" x2="20" y2="45"/>
+            <line x1="30.6" y1="36.4" x2="33.2" y2="39"/>
+            <line x1="9.4" y1="36.4" x2="6.8" y2="39"/>
+            <line x1="34" y1="27" x2="37.6" y2="27"/>
+            <line x1="6" y1="27" x2="2.4" y2="27"/>
+          </g>
+          <path class="lamp__cap" d="M15.5 3.2h9v7.3h-9z"/>
+          <line class="lamp__thread" x1="15.5" y1="5.9" x2="24.5" y2="5.9"/>
+          <line class="lamp__thread" x1="15.5" y1="8.4" x2="24.5" y2="8.4"/>
+          <path class="lamp__neck" d="M16.4 10.5 16 16M23.6 10.5 24 16"/>
+          <circle class="lamp__glass" cx="20" cy="27" r="11.4"/>
+          <path class="lamp__filament" d="M15.6 29.4q2.2-6 4.4 0t4.4 0"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="sheet" id="main">
+
+    <div class="page-head">
+      <p class="page-head__kicker">Case study · 2026 · solo</p>
+      <h1>Kural RAG</h1>
+      <p class="page-head__sub">Cross-lingual retrieval over classical Tamil</p>
+
+      <div class="scoreboard">
+        <div>
+          <div class="score__value">97<span class="unit">/100</span></div>
+          <div class="score__label">Retrieval accuracy on the hand-built golden set, up from a 44/100 baseline</div>
+        </div>
+        <div>
+          <div class="score__value">78<span class="unit">% / </span>56<span class="unit">%</span></div>
+          <div class="score__label">A correct verse in the five shown / the first verse shown is correct</div>
+        </div>
+        <div>
+          <div class="score__value">233</div>
+          <div class="score__label">Questions hand-labelled before any of the retrieval code was written</div>
+        </div>
+        <div>
+          <div class="score__value">₹0.005</div>
+          <div class="score__label">Per query, question rewriting and written answer together</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="what">
+      <div class="column">
+        <p class="lede dropcap">A visitor types a life question in English, Tamil, or Thanglish. The system finds the genuinely relevant verses among all 1,330 of the Thirukkural — even when the question shares no words with the text, and even across languages — and writes a short answer using only those verses, where every claim carries the number of the verse it rests on.</p>
+
+        <aside class="note">
+          <span class="note__value">1,330</span>
+          <p>Two-line couplets on ethics, governance and love, written around two thousand years ago. Rigidly structured: 133 chapters of exactly ten verses each.</p>
+        </aside>
+
+        <p>Each retrieved verse is shown with its Tamil original, transliteration, English translations, three modern Tamil prose readings and two classical commentaries. A citation the model invents — a verse number it was never given — is dropped before display and written to the log, because a citation that leads nowhere is a lie the reader can click.</p>
+
+        <p>The repository's own opening line is that it is a classroom, not a delivery project: the working product is a side effect, and the actual deliverable is understanding every line in it. That framing is why this page can be this specific.</p>
+      </div>
+
+      <figure class="wide">
+        <img src="/assets/kural-landing.png" width="1124" height="720" loading="lazy" decoding="async"
+             alt="The Kural RAG entry screen: the heading &quot;Ask the திருக்குறள் a question&quot;, a question typed in Thanglish reading &quot;epdi nalla thoongurathu&quot;, and the corpus structure below it — 3 sections, 13 subsections, 133 chapters of ten verses each, 1,330 couplets."/>
+        <figcaption>The front door. The structure of the book is stated before anything is searched, because the chapter is the unit the retriever reasons about.</figcaption>
+      </figure>
+
+      <figure class="wide">
+        <img src="/assets/kural-answer-view.png" width="1124" height="744" loading="lazy" decoding="async"
+             alt="The answer view. A Thanglish question is answered in a short paragraph where every clause carries a numbered verse citation — 1230, 1218, 1213, 1216, 1224 — above a line reading &quot;grounded in 5 of 1330 kurals, sarvam-105b, 5 citations checked&quot;. Below it the first retrieved verse, 1213, is shown in Tamil with transliteration and English translation."/>
+        <figcaption>What a visitor sees. The engine that produced each score is named on the card; nothing on this screen is estimated.</figcaption>
+      </figure>
+
+      <div class="column">
+        <h2 id="harness">The harness came first</h2>
+
+        <p>Before any retrieval code existed there were 233 questions with hand-checked answer keys, in two sets that disagree with each other on purpose.</p>
+
+        <p>The honest set is 100 questions, and its answer key is not just "the chapter this question belongs to". It also carries 200 hand-checked verses from <em>other</em> chapters that genuinely answer the question — each one proposed by a keyword sweep, then read and judged.</p>
+
+        <aside class="note">
+          <p><strong>The worked example.</strong> Verse 35 — "Four ills eschew: lust, anger, envy, evil-speech" — genuinely answers a question about anger, but lives in chapter 4, not the anger chapter 31. Without the hand-checked extras the scorecard would have punished a retriever for being right.</p>
+        </aside>
+
+        <p>The second set is 133 questions, one per chapter, in deliberately awkward real-world phrasings — "my classmate got the promotion and I feel bitter". It is stricter in absolute terms and biased toward chapter-matching methods by construction, which is exactly why results get split by set before they get believed.</p>
+
+        <h2 id="funnel">The funnel — the two numbers that must travel together</h2>
+
+        <p>For most of the project only the top-5 number was quoted. It flatters. Here is the whole funnel, and from here on both numbers travel together:</p>
+      </div>
+
+      <figure class="wide">
+        <img class="diagram" src="/assets/kural-funnel.svg" width="1616" height="808" loading="lazy" decoding="async"
+             alt="The retrieval funnel narrowing across three stages. The corpus is 1,330 verses. Stage one — embeddings, keywords and a chapter signal, scoring all 1,330 exactly — leaves 50 candidates, and a correct verse is still present for 92% of questions, 214 of 233. A cross-encoder reading question and verse as a pair keeps five, where a correct verse is present for 78%, 182 of 233. The same reranker orders those five, and the first result is correct for 56%, 131 of 233. A bracket to the right marks where it is lost: 22%, 51 of 233, are in the five but not first."/>
+        <figcaption>The most informative object on this page: where the correct verse survives, and where it is lost.</figcaption>
+      </figure>
+
+      <div class="column">
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr><th>stage</th><th>what survives</th><th>correct verse present</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowhead">stage one — embeddings, keywords, chapter signal</td><td>50 candidates</td><td class="num">214 / 233 · 92%</td></tr>
+              <tr><td class="rowhead">reranker keeps five</td><td>5 shown</td><td class="num">182 / 233 · 78%</td></tr>
+              <tr><td class="rowhead">reranker orders them</td><td>the first result</td><td class="num">131 / 233 · 56%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>In roughly 22% of questions the right verse is in the five but not first. That gap is reranker quality, and closing part of it — rank-1 from 45% to 56% — was the single strongest result of the project. Quoting only 78% would misrepresent what a person actually experiences on the page.</p>
+
+        <h2>How a question becomes an answer</h2>
+
+        <p>Four stages. Every constant in them was set by a measurement, not a default.</p>
+      </div>
+
+      <figure class="wide">
+        <img class="diagram" src="/assets/kural-pipeline.svg" width="1616" height="1212" loading="lazy" decoding="async"
+             alt="The query pipeline as a flow chart. A question as typed reaches a decision: is it Tamil script? The yes branch, drawn heavier and labelled the Tamil branch, goes to &quot;searched as typed — rewrite skipped, the UI says so&quot;. The no branch goes to a HyDE rewrite by Sarvam-105B taking about half a second. Both rejoin at stage one, which scores all 1,330 verses exactly at 0.7 times meaning plus 0.3 times keyword, where meaning is 0.5 verse plus 0.5 chapter. That yields the top 50 candidates, which a bge-reranker-v2-m3 cross-encoder reranks by reading question and verse together, leaving the top 5 shown. The answer is written from those five only, with every citation checked against them."/>
+        <figcaption>Both ends move toward each other: HyDE moves the question toward the book's vocabulary, and modernised prose moves the book toward the question's.</figcaption>
+      </figure>
+
+      <div class="column">
+        <h2 id="gains">Every gain measured on its own</h2>
+
+        <p>One change at a time, each verified with McNemar's exact test — the paired test that looks only at the questions two methods disagree on, because if the methods were equally good each disagreement is a fair coin flip. Below 0.05 the project says the effect is real; otherwise it is not established and the change does not ship.</p>
+
+        <aside class="note">
+          <p>Computed by hand once, to check the harness: a 9-vs-1 split in 10 disagreements gives 22 lopsided outcomes of 1,024, so p = 0.0215 — reproducing the number the harness had printed that morning.</p>
+        </aside>
+
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr><th>method</th><th>hits / 100</th><th>median rank of first correct</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowhead">plain embedding search — baseline</td><td class="num">44</td><td class="num">7</td></tr>
+              <tr><td class="rowhead">blend in a chapter-level signal</td><td class="num">52</td><td class="num">4</td></tr>
+              <tr><td class="rowhead">+ strip question words from the query</td><td class="num">69</td><td class="num">2</td></tr>
+              <tr><td class="rowhead">+ hybrid keyword scoring at weight 0.3</td><td class="num">75</td><td class="num">1</td></tr>
+              <tr><td class="rowhead">+ cross-encoder rerank of the top 50</td><td class="num">85</td><td class="num">1</td></tr>
+              <tr><td class="rowhead">+ hand-written chapter descriptions</td><td class="num">90</td><td class="num">1</td></tr>
+              <tr><td class="rowhead">+ HyDE query rewriting</td><td class="num">93</td><td class="num">1</td></tr>
+              <tr><td class="rowhead">+ modernised corpus prose</td><td class="num">97</td><td class="num">1</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The chain, with its p values: 44→52 at p = 0.039 · 52→75 at p = 0.000 · 75→85 at p = 0.006 · 44→85 at p = 0.000. The 85→90 step could not be established at 100 questions (p = 0.125) and needed the set grown to 233 to settle at p = 0.0129 — the first properly powered experiment here, run after a power calculation said about 200 questions would decide it.</p>
+
+        <p>The largest single gain in the whole project was free: deleting about 111 question and function words from the query took the golden set from 44 to 69. No information was added. Noise was removed.</p>
+
+        <aside class="note">
+          <span class="note__value">26 / 100</span>
+          <p>Questions answered by one verse about eating meat — because its translation opens with a rhetorical question, and so did the queries. The model was matching the shape of the text, not its subject.</p>
+        </aside>
+
+        <p>That failure is worth stating plainly, because it is the reason the rewriting stage exists at all. Keyword search had the same problem from the other side: BM25 weighted the word "how" at 3.78, nearly level with "anger" at 4.13, because old verse rarely says "how do I".</p>
+      </div>
+
+      <figure class="wide">
+        <img class="diagram" src="/assets/kural-progression.svg" width="1616" height="909" loading="lazy" decoding="async"
+             alt="A step chart of the golden-set score, out of 100, rising across eight measured states: 44, 52, 69, 75, 85, 90, 93, 97. Each step is labelled with what changed and its p value from McNemar's exact test — a chapter-level signal at p = 0.039; stripping question words from the query, with no paired test reported on its own; hybrid keyword scoring at weight 0.3, where 52 to 75 gives p = 0.000; a cross-encoder rerank of the top 50 at p = 0.006; hand-written chapter descriptions at p = 0.0129; HyDE query rewriting, again with no separate test; and modernised corpus prose at p = 0.0391. The 85 to 90 step is ringed and footnoted: it could not be established at 100 questions, where p = 0.125, so the set was grown to 233, where it settled at p = 0.0129."/>
+        <figcaption>The progression, one change at a time. The flat stretch is as informative as the climb.</figcaption>
+      </figure>
+
+      <div class="column">
+        <h2 id="declined">What I don't claim</h2>
+
+        <p>Replacing the word list with a hosted rewriter beat it decisively. Replacing it with a local model beat it too. Between those two rewriters, the hosted one scored fifteen questions higher — and landed at p = 0.0534.</p>
+
+        <div class="aside">
+          <p>Just outside. Reporting it as a win would have been easy, and nobody would have checked. The hosted rewriter ships anyway, but on latency grounds — 0.5 s against roughly 100 s per question for the local model on a real host — which is a different argument, made openly rather than smuggled in behind a number.</p>
+        </div>
+
+        <h3>The rest of the list</h3>
+
+        <p>These are measured, and they are not findings. They are on this page because leaving them off is how a portfolio becomes a sales document.</p>
+
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr><th>what I can't claim</th><th>the number that forbids it</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowhead">that the hosted rewriter beats the local one</td><td class="num">p = 0.0534</td></tr>
+              <tr><td class="rowhead">that Tamil input makes the reranker better</td><td>not established either way; deferred until the test set grows</td></tr>
+              <tr><td class="rowhead">that removing the Victorian verse translation helps</td><td>every arm's p failed; it stays</td></tr>
+              <tr><td class="rowhead">that the in-domain prompt beats the out-of-domain one</td><td class="num">169 vs 164, p failed</td></tr>
+              <tr><td class="rowhead">any direction from the small-reranker bake-off</td><td>every p failed; readable as directions only</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>One earlier result is void rather than merely unproven. A frontier model's query rewrites once scored 97 out of 100 — because it had the chapter list in its context and was echoing correct chapter titles back. It is kept in the log marked VOID, as an example of catching leakage, and never as a result. It is a different number from the 97 at the top of this page, which comes from the corpus modernisation and was verified at p = 0.0391.</p>
+
+        <h2 id="wrong">Two things that were wrong before anything worked</h2>
+
+        <h3>The join</h3>
+
+        <p>The corpus is built from two public files. One has all 1,330 verses but no Parimelazhagar commentary; the other has the commentary but is missing verses 395 and 648. Joining them on position rather than on the verse number would have silently mis-paired 934 of 1,330 records, because everything after a hole slides up by one.</p>
+
+        <aside class="note">
+          <span class="note__value">934 / 1330</span>
+          <p>Nothing crashes, the output looks fine, and 70% of it is wrong. The archetypal bug shape in this project — every bug here has been silent.</p>
+        </aside>
+
+        <p>The audit that found the rest — a truncated line in verse 1000, two verses carrying another verse's meaning, 664 records with an English translation glued onto the end of a Tamil commentary — was itself tested before it was trusted. Twenty-two errors were planted deliberately. The small multilingual embedding model caught none of them; LaBSE caught fifteen. That measurement is why the project uses LaBSE. A detector nobody has tested is worth nothing.</p>
+
+        <p>One defect is worth naming on its own: verse 524 carried verse 468's meaning in <em>both</em> raw sources and in two of three reference websites, because they all copy the same upstream dataset. Agreement between sources proves nothing when they copy one another.</p>
+
+        <h3>The metric that graded its own homework</h3>
+
+        <p>Defining "correct" as "in the right chapter" and then tuning the chapter weight is a metric rewarding the thing being tested. It said a chapter weight of 0.8 was best; the honest set said 0.8 scored 42 — below the 44 baseline. Five weeks later the same trap fired again, with the written warning sitting in the code and read that same morning. Reading a lesson is not owning it.</p>
+
+        <h2 id="cause">Correlation, then intervention</h2>
+
+        <p>Counting how many correct verses reached the candidate pile produced a beautiful curve: success climbed with the count and never flattened. The causal story felt obvious — give the reranker more to work with and it does better.</p>
+
+        <p>So the pile was widened from 50 to 75. The count went up, from 7.2 correct verses per question to 8.2, and the score went <em>down</em>, 174 to 165, at p = 0.0352. The extra candidates were distractors this reranker fell for. The correlation reading was dead and the reranker was the wall; replacing it moved rank-1 from 105 to 131 out of 233 at p = 0.0001.</p>
+
+        <aside class="note">
+          <span class="note__value">p = 0.0001</span>
+          <p>The strongest result in the project, and it only exists because the intervention contradicted the correlation. A plausible mechanism is not a cause.</p>
+        </aside>
+
+        <p>The replacement was run on a rented T4 GPU through a portable package whose 50-candidate piles were frozen at home and shipped as data — different machines' embeddings differ in the last decimals, enough to swap candidate 50 for 51 and void the comparison. The package was validated first by running the shipping model through it and reproducing the saved baseline with zero disagreements.</p>
+
+        <h2 id="stands">Where it stands</h2>
+
+        <p>Retrieval is done and scored. Generation is wired end to end with citations checked against the verses the model was actually given, but the breaking tests — deliberately feeding it wrong verses, off-topic questions, and hunting invented citations at scale — have not been run, so the honest description is that it is citation-checked but not yet adversarially tested.</p>
+
+        <p>Citation validity is unmeasured, and the app renders it as a blank rather than an estimate. Measuring it needs a judge, and three judges compared on 113 claims disagreed too much to trust: the model judging its own answers called 92% of them clean, a different vendor's model called 73.5% clean, and the two disagreed on 30 of the 113 — one of them calling a word-for-word quote unsupported. A model cannot judge its own answers, and an unchecked instrument is not a measurement.</p>
+
+        <p>The refusal thresholds read "planned" for the same reason. The measurement said the score cannot yet separate a question the book answers from one it doesn't — a floor set anywhere useful would refuse four genuine questions to catch one fake. So the interface ships with confidence uncalibrated and says so, rather than claiming certainty on the engine's behalf.</p>
+
+        <p>The most honest thing about the current state is the ceiling: the golden set's best score is 97 of 100, which leaves three questions of room, so a real improvement and no improvement now produce the same verdict. The limit is the test set, not the pipeline. The ruler, not the model, is what needs to grow.</p>
+
+        <a class="backlink" href="/work/">← All work</a>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <span>© 2026 Vanchi Vikash P M · Chennai, India</span>
+      <span>
+        <a href="https://github.com/vanji-creator" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      </span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="/ledger.js" defer></script>
+</body>
+</html>

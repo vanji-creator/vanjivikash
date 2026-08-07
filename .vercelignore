@@ -1,0 +1,15 @@
+# The notebook version (v1) is kept in git as source, but is not deployed.
+# It is the previous portfolio design, superseded by v2-ledger.
+#
+# Patterns are root-anchored on purpose: an unanchored filename would also
+# match the copy under v2-ledger/assets/ and break the resume download.
+
+/v1-notebook
+/scraps
+/screenshots
+/uploads
+/PLAN.md
+/PROJECT_UNIVERSE.md
+/.thumbnail
+*.zip
+/ASSETS.md

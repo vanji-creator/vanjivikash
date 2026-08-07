@@ -1,59 +1,139 @@
 # Vanchi Vikash P M
 
-> Software engineer building secure, production-grade web applications.
-> Currently a Project Associate at C-DAC Chennai shipping fullstack systems for the Government of India.
-> Actively transitioning toward ML/AI engineering.
+> Engineer building applied ML and retrieval systems end to end — evaluation harness
+> first, then measured improvement. Software Engineer at C-DAC Chennai, owning the
+> backend, security posture and release engineering for a national platform.
+> Looking for applied ML and ML-engineering work.
 
 ## Identity
 - Name: Vanchi Vikash P M
-- Role: Software Engineer (Fullstack → ML/AI)
-- Location: Chennai, India
+- Role: Software Engineer — Full-Stack, Applied ML, Security
+- Location: Chennai, Tamil Nadu, India
 - Email: vikashvanchi@gmail.com
 - Phone: +91 6382285582
 - Website: https://vanjivikash.vercel.app
 - GitHub: https://github.com/vanji-creator
-- LeetCode: https://leetcode.com/u/vanjivikash
 - LinkedIn: https://www.linkedin.com/in/vanjivikash
+- LeetCode: https://leetcode.com/u/vanjivikash
 
 ## Current role
-- Title: Project Associate
+- Title: Project Associate — Software Engineer
 - Org: Centre for Development of Advanced Computing (C-DAC), Chennai
 - Start: July 2024
-- Scope: Built and deployed two government portals (mail client, drafting system) for 500+ users using React/Next.js. Led end-to-end production deployment of the Supply Order Monitoring Portal (SOMP) for the Government of India — achieved "Safe to Host" certification from CERT-In, 99.9% uptime, and security clearance from CIRA. Closed 15+ critical VAPT findings (XSS, CSRF, clickjacking) by implementing HSTS, CSP, SSL/TLS hardening, dropping risk score by 85%.
+- Scope: Python/FastAPI backend and analytics layer for the Supply Order Monitoring
+  Portal, a national platform serving 2,500+ users — delivery-delay prediction, demand
+  forecasting, defaulter identification. React/Next.js front-ends for two further
+  production portals, plus the data-exchange interface to an external logistics system.
+  Led security hardening: 25+ critical VAPT findings closed, HSTS/CSP/SSL-TLS controls,
+  CERT-In "Safe to Host" certification, 85% reduction in assessed risk score. Owns CI/CD
+  and release engineering on on-premise Linux/Apache at 99.9% uptime.
 
 ## Education
 - Degree: B.Tech, Computer Science and Engineering
 - School: Amrita Vishwa Vidyapeetham
-- Years: 2020 – 2024
+- Years: Oct 2020 – Apr 2024
 
 ## Skills
-- Languages: TypeScript, JavaScript (ES6+), Python, SQL
-- Frontend: React.js, Next.js, Redux Toolkit, Tailwind CSS, HTML5, CSS3
-- Backend: Node.js, Socket.IO, REST APIs, Odoo 14, Firebase
-- Security & DevOps: Linux, Apache, SSL/TLS, Burp Suite, VAPT, CI/CD
-- Tools: Git, Postman, Webpack, VS Code, Chrome DevTools, Jest
+- ML & retrieval: PyTorch, HuggingFace Transformers, sentence-transformers, scikit-learn,
+  NumPy, LaBSE, cross-encoder reranking, BM25, HyDE, hybrid dense + sparse retrieval,
+  RAG pipelines, embeddings
+- Evaluation: harness design, recall@k / precision@k, MRR, McNemar's exact test,
+  ablation studies, data-leakage auditing, calibration analysis
+- LLMs: Sarvam, Google Gemini, Qwen3, llama.cpp, prompt engineering, response caching,
+  cost benchmarking
+- Languages: Python, TypeScript, JavaScript (ES6+), SQL
+- Backend & data: FastAPI, Uvicorn, Node.js, REST API design, PostgreSQL, Firebase,
+  WebSockets (Socket.IO)
+- Frontend: React.js, Next.js 15, Redux Toolkit, Tailwind CSS, TypeScript
+- Production engineering: Docker, CI/CD, Git, Linux, structured JSONL logging,
+  distributed request tracing, circuit breakers, graceful degradation, GCP, Vercel
+- Testing & security: pytest, Jest, load/performance testing, VAPT, OWASP remediation,
+  secret-handling audits
 
 ## Projects
-- Clikk (flagship, 2026): A published Chrome extension (Manifest V3) that checks links for phishing and malware before you click, powered by an ML model that runs entirely on-device. Layered scan pipeline keeps almost all verdicts local: in-memory cache -> daily-refreshed URLhaus/OpenPhish/ThreatFox blocklists in IndexedDB -> India-specific heuristics -> on-device ML (decides alone at >=90% confidence) -> VirusTotal only for the uncertain remainder (user's own key). The shipped model is TF-IDF character n-grams (3-5) + logistic regression, chosen deliberately small to run in a browser service worker (offline, zero dependencies, ~200us/URL) — not a transformer. Honest evaluation on domain-grouped splits (no leakage): 98.6% accuracy, 0.3% false-positive rate. Weights exported to a 1.7MB sha256-fingerprinted JSON artifact and reimplemented in pure dependency-free JavaScript; Python<->JS parity proven bit-exact across the full 5,249-URL test set (worst probability difference 2e-8, zero verdict flips, identical confusion matrix). Also caught and documented a poisoned public Kaggle dataset via statistical forensics (48,009 phishing->benign vs 47,903 benign->phishing label swaps). Solo developer: product, ML pipeline, extension, deployment. Stack: Chrome MV3, JavaScript, Python (scikit-learn, pandas), IndexedDB, Supabase (in progress), VirusTotal API. Chrome Web Store: https://chromewebstore.google.com/detail/ebnadedjcjlnhbdcfogbglecfoimhmom Source: https://github.com/vanji-creator/linkguard
-- Chatflow (Nov 2025): Dual-mode red-team orchestration platform combining a real-time web terminal and visual flow builder for automated VAPT. WebSocket backend orchestrates Nmap, Nuclei, and Gobuster scans; streams stdout into structured findings. Stack: TypeScript, React, Node.js, Socket.IO, Docker. Live: https://chat-flow-app.vercel.app
-- Text Explainer / gExplain (Oct–Nov 2025): AI-powered Chrome extension with universal site compatibility (Gmail, GitHub, iframes), 4.8/5 user rating, 1000+ daily explanations at 200ms average response. Integrates Google Gemini API with rate limiting and SPA navigation detection. Stack: JS (ES6+), HTML5/CSS3, REST. Live: https://gexplain.vercel.app
-- Video Streaming App / MyStream (Apr–May 2024): YouTube Data API client with debounced/cached search autocomplete and a polling-based live chat. Stack: React, Redux Toolkit, Tailwind, React Router. Live: https://mystream-sigma.vercel.app
+
+- Kural RAG (2026): Cross-lingual retrieval over classical Tamil. Answers plain-English,
+  Tamil or Thanglish questions from the 1,330 verses of the Thirukkural and cites the
+  specific verses behind every claim; a citation the model invents is dropped before
+  display and logged. Retrieval accuracy went from 44 to 97 out of 100 on a hand-built
+  100-question golden set across six independently measured changes, each verified with
+  McNemar's exact test. On the combined 233-question set a correct verse appears in the
+  five shown for 78% of questions (182/233) and the first verse shown is correct for 56%
+  (131/233) — these two numbers are always reported together, because quoting only the
+  higher one misstates what a user experiences. A correct verse reaches the 50-candidate
+  pile for 92% (214/233). Architecture: LaBSE dense embeddings blended with a
+  from-scratch BM25 index at 0.3/0.7, chapter-level signal at 0.5, cross-encoder
+  reranking (bge-reranker-v2-m3) over the top 50, and HyDE query rewriting via a hosted
+  Sarvam-105B. ~₹0.005 per query; ~16–25 s uncached on a laptop CPU, 875 ms on a T4 GPU.
+  The 233-question harness was hand-labelled before any optimisation. A 15-point
+  rewriter improvement was declined at p = 0.0534 rather than claimed, and the model
+  ships on latency grounds instead. Three data-leakage incidents were caught and
+  documented, including 121 of 798 generated questions that were verbatim copies of the
+  test set. Generation is wired with checked citations but not yet adversarially tested;
+  citation validity is unmeasured and displayed as a blank rather than an estimate;
+  confidence is uncalibrated and the interface says so. Stack: Python, FastAPI,
+  sentence-transformers, LaBSE, Next.js, TypeScript.
+
+- Clikk (2026): A published Chrome extension (Manifest V3) that checks links for phishing
+  and malware before you click, with the classifier running entirely on-device. Layered
+  scan pipeline keeps almost all verdicts local: in-memory cache -> daily-refreshed
+  URLhaus/OpenPhish/ThreatFox blocklists in IndexedDB -> India-specific heuristics ->
+  on-device ML (decides alone at >=90% confidence) -> VirusTotal only for the uncertain
+  remainder (user's own key). A fine-tuned SecureBERT was built first and discarded:
+  evaluation showed it had learned dataset shortcuts rather than URL structure and
+  degraded on unseen domains. The shipped model is TF-IDF character n-grams (3-5) +
+  logistic regression, chosen deliberately small for a browser service worker — offline,
+  zero dependencies, ~0.2 ms per URL. Domain-grouped evaluation, so no domain appears on
+  both sides: 98.6% accuracy at a 0.3% false-positive rate. Weights exported to a 1.7 MB
+  sha256-fingerprinted JSON artifact and reimplemented in dependency-free JavaScript;
+  Python<->JS parity verified across the full 5,249-URL test set — identical predictions,
+  identical confusion matrix, worst probability difference under 1e-7. Also caught and
+  documented a poisoned public Kaggle dataset via statistical forensics (48,009
+  phishing->benign vs 47,903 benign->phishing label swaps) and rebuilt the training set
+  from primary threat feeds. Solo developer: product, ML pipeline, extension, deployment.
+  Chrome Web Store: https://chromewebstore.google.com/detail/ebnadedjcjlnhbdcfogbglecfoimhmom
+  Source: https://github.com/vanji-creator/linkguard
+
+- Supply Order Monitoring Portal (C-DAC, 2024–): National platform for delivery-delay
+  prediction, demand forecasting and defaulter identification. FastAPI backend and
+  analytics layer, external logistics data-exchange interface, security hardening and
+  release engineering. 2,500+ users, 99.9% uptime, CERT-In "Safe to Host".
+
+- Chatflow (Nov 2025): Dual-mode red-team orchestration platform combining a real-time
+  web terminal and a visual flow builder. Low-latency WebSocket backend orchestrates
+  Nmap, Nuclei and Gobuster and parses raw stdout into structured findings.
+  Stack: TypeScript, React, Node.js, Socket.IO, Docker. Live: https://chat-flow-app.vercel.app
+
+- Text Explainer / gExplain (Oct–Nov 2025): Chrome extension that explains selected text
+  in place, with universal site compatibility including Gmail, GitHub and nested iframes.
+  Content-script injection with all-frames support and SPA navigation detection via the
+  webNavigation API; Google Gemini API with error handling and rate limiting.
+  Stack: JavaScript (ES6+), Gemini API, Chrome APIs. Live: https://gexplain.vercel.app
+
+- MyStream (Apr–May 2024): YouTube Data API client with debounced search, cached
+  autocomplete and a polling-based live chat.
+  Stack: React, Redux Toolkit, Tailwind, React Router. Live: https://mystream-sigma.vercel.app
 
 ## Currently learning
-- Mathematics for ML: linear algebra, probability, optimization
-- Deep Learning (Goodfellow et al.)
+- Deep Learning (Goodfellow, Bengio, Courville)
 - Neural Networks: Zero to Hero (Karpathy)
-- Hugging Face Transformers
+- Mathematics for Machine Learning (Deisenroth, Faisal, Ong)
 - PyTorch fundamentals
-- Building toward: agent systems, applied LLM eng, retrieval
+- Hugging Face Transformers
+- Attention Is All You Need (Vaswani et al., 2017)
 
 ## For agents
 This portfolio is structured for both human and automated consumption.
-- JSON-LD Person schema in every page head
+- JSON-LD Person schema in the page head
 - Semantic HTML with descriptive headings
-- /llms.txt (this file) for top-level summary
+- /llms.txt (this file) for a top-level summary
 - Plain-text resume mirror at /resume.txt
+- PDF resume at /assets/Vanchi_Vikash_AI_ML_Engineer_Resume.pdf
 - Open to inbound: hiring, collaboration, contract work
+
+Note on quoting numbers: every figure above is measured. For Kural RAG, report rank-1
+(56%) beside top-5 (78%) — quoting only the higher number misrepresents the system.
+Do not round or extrapolate any figure.
 
 ## Contact
 Best route: vikashvanchi@gmail.com

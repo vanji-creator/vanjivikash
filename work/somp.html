@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Supply Order Monitoring Portal — Vanchi Vikash P M</title>
+<link rel="canonical" href="https://vanjivikash.vercel.app/work/somp.html"/>
+<meta name="description" content="A national platform at C-DAC Chennai serving 2,500+ users: FastAPI backend, analytics layer, external logistics integration, security hardening and release engineering."/>
+<script>
+try {
+  var t = localStorage.getItem("ledger.theme");
+  if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.dataset.theme = t;
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ledger.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="shell">
+
+  <aside class="ident">
+    <a class="ident__name" href="/">Vanchi Vikash P M</a>
+    <p class="ident__role">Applied ML and retrieval.<br>Chennai, India.</p>
+    <nav class="ident__nav" aria-label="On this page">
+      <a class="ident__back" href="/work/">All work</a>
+      <a href="#does">What it does</a>
+      <a href="#cleared">Getting it cleared to run</a>
+      <a href="#why">Why it is here</a>
+    </nav>
+    <p class="ident__label">Elsewhere</p>
+    <div class="ident__links">
+      <a href="/work/">All work</a>
+      <a href="/about.html">About</a>
+      <a href="/resume.html">Résumé</a>
+      <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      <button class="lamp" type="button" data-theme-toggle aria-pressed="false" title="Switch theme">
+        <svg class="lamp__bulb" viewBox="0 0 40 46" width="34" height="39" aria-hidden="true" focusable="false">
+          <g class="lamp__rays">
+            <line x1="20" y1="41.5" x2="20" y2="45"/>
+            <line x1="30.6" y1="36.4" x2="33.2" y2="39"/>
+            <line x1="9.4" y1="36.4" x2="6.8" y2="39"/>
+            <line x1="34" y1="27" x2="37.6" y2="27"/>
+            <line x1="6" y1="27" x2="2.4" y2="27"/>
+          </g>
+          <path class="lamp__cap" d="M15.5 3.2h9v7.3h-9z"/>
+          <line class="lamp__thread" x1="15.5" y1="5.9" x2="24.5" y2="5.9"/>
+          <line class="lamp__thread" x1="15.5" y1="8.4" x2="24.5" y2="8.4"/>
+          <path class="lamp__neck" d="M16.4 10.5 16 16M23.6 10.5 24 16"/>
+          <circle class="lamp__glass" cx="20" cy="27" r="11.4"/>
+          <path class="lamp__filament" d="M15.6 29.4q2.2-6 4.4 0t4.4 0"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="sheet" id="main">
+
+    <div class="page-head">
+      <p class="page-head__kicker">Case study · 2024–present · at C-DAC</p>
+      <h1>Supply Order Monitoring Portal</h1>
+      <p class="page-head__sub">Centre for Development of Advanced Computing, Chennai</p>
+
+      <div class="scoreboard">
+        <div>
+          <div class="score__value">2,500<span class="unit">+</span></div>
+          <div class="score__label">Users on the live system</div>
+        </div>
+        <div>
+          <div class="score__value">25<span class="unit">+</span></div>
+          <div class="score__label">Critical VAPT findings closed</div>
+        </div>
+        <div>
+          <div class="score__value">85<span class="unit">%</span></div>
+          <div class="score__label">Reduction in assessed risk score</div>
+        </div>
+        <div>
+          <div class="score__value">99.9<span class="unit">%</span></div>
+          <div class="score__label">Uptime across the portal estate</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="column">
+        <p class="lede dropcap">A national platform for the Government of India that tracks supply orders and predicts where they will go wrong. I own the Python and FastAPI backend, the analytics layer, the interface to an external logistics system, and the release engineering that puts it on on-premise infrastructure.</p>
+
+        <h2 id="does">What it does</h2>
+
+        <p>The analytics layer covers delivery-delay prediction, demand forecasting and defaulter identification — the three questions the people running the estate actually ask. Two further production portals were built alongside it in React and Next.js.</p>
+
+        <p>I designed the data-exchange interface that connects the portal to an external inventory and logistics system: record mapping, API contract, error handling and reconciliation. Most of the difficulty in that work is not the transport — it is agreeing what a record means when two systems disagree about it, and deciding what happens to the ones that will not reconcile.</p>
+
+        <aside class="note">
+          <p>This is the only project here I cannot show. It is a government system, so there are no screenshots on this page and there will not be any.</p>
+        </aside>
+      </div>
+
+      <figure class="wide">
+        <div class="ph__box" style="--ar: 16 / 9">
+          <span class="ph__size">1616 × 909 · export 2× · architecture diagram</span>
+          <span class="ph__brief">The system in one figure: browsers → Next.js portals → FastAPI service → PostgreSQL, with the analytics layer branching off and the data-exchange interface reaching an external inventory and logistics system. Mark the reconciliation path, and mark where the security controls sit. Abstract shapes only — no real screens, no real data.</span>
+        </div>
+        <figcaption>Drawn from the architecture, not from the screens. Nothing here reveals the system's contents.</figcaption>
+      </figure>
+
+      <div class="column">
+        <h2 id="cleared">Getting it cleared to run</h2>
+
+        <p>A government platform does not ship because it works. I led the security hardening: 25+ critical VAPT findings closed — cross-site scripting, CSRF, clickjacking — and HSTS, Content Security Policy and SSL/TLS controls implemented, which cut the assessed risk score by 85% and earned CERT-In "Safe to Host" certification.</p>
+
+        <aside class="note">
+          <span class="note__value">85%</span>
+          <p>Reduction in the assessed risk score. The certification is the gate: without it the platform does not go to production, regardless of whether the features are finished.</p>
+        </aside>
+
+        <p>Test strategy ran across the stack before rollout: automated pytest and Jest unit tests, user-acceptance testing with the client stakeholders, and load testing. CI/CD and production release engineering on on-premise Linux and Apache have sustained 99.9% uptime across the portal estate.</p>
+
+        <h2 id="why">Why it is here</h2>
+
+        <p>It is the least glamorous thing on this site and the one that taught me the most about shipping. The ML work on the other two projects is more interesting to read about; this is where I learned what it costs to keep something running for people who did not choose to use it, on infrastructure I do not get to replace, under an audit that does not care how elegant the code is.</p>
+
+        <p>It is also where the habits on the rest of this site came from. Structured logging, request tracing, graceful degradation and a real test strategy are not things I picked up from a course — they are what a national system demands when something goes wrong at four in the afternoon and 2,500 people notice.</p>
+
+        <a class="backlink" href="/work/">← All work</a>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <span>© 2026 Vanchi Vikash P M · Chennai, India</span>
+      <span>
+        <a href="https://github.com/vanji-creator" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      </span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="/ledger.js" defer></script>
+</body>
+</html>

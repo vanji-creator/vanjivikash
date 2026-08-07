@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>About — Vanchi Vikash P M</title>
+<link rel="canonical" href="https://vanjivikash.vercel.app/about.html"/>
+<meta name="description" content="How a full-stack engineer who shipped government platforms taught himself to measure machine learning — and why the harness always comes first."/>
+<script>
+try {
+  var t = localStorage.getItem("ledger.theme");
+  if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.dataset.theme = t;
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ledger.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="shell">
+
+  <aside class="ident">
+    <a class="ident__name" href="/">Vanchi Vikash P M</a>
+    <p class="ident__role">Applied ML and retrieval.<br>Chennai, India.</p>
+    <nav class="ident__nav" aria-label="On this page">
+      <a class="ident__back" href="/">Home</a>
+      <a href="#route">How I got here</a>
+      <a href="#method">How I work</a>
+      <a href="#stack">What I use</a>
+      <a href="#want">What I'm looking for</a>
+    </nav>
+    <p class="ident__label">Elsewhere</p>
+    <div class="ident__links">
+      <a href="/">Home</a>
+      <a href="/work/">All work</a>
+      <a href="/now.html">Now</a>
+      <a href="/resume.html">Résumé</a>
+      <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      <button class="lamp" type="button" data-theme-toggle aria-pressed="false" title="Switch theme">
+        <svg class="lamp__bulb" viewBox="0 0 40 46" width="34" height="39" aria-hidden="true" focusable="false">
+          <g class="lamp__rays">
+            <line x1="20" y1="41.5" x2="20" y2="45"/>
+            <line x1="30.6" y1="36.4" x2="33.2" y2="39"/>
+            <line x1="9.4" y1="36.4" x2="6.8" y2="39"/>
+            <line x1="34" y1="27" x2="37.6" y2="27"/>
+            <line x1="6" y1="27" x2="2.4" y2="27"/>
+          </g>
+          <path class="lamp__cap" d="M15.5 3.2h9v7.3h-9z"/>
+          <line class="lamp__thread" x1="15.5" y1="5.9" x2="24.5" y2="5.9"/>
+          <line class="lamp__thread" x1="15.5" y1="8.4" x2="24.5" y2="8.4"/>
+          <path class="lamp__neck" d="M16.4 10.5 16 16M23.6 10.5 24 16"/>
+          <circle class="lamp__glass" cx="20" cy="27" r="11.4"/>
+          <path class="lamp__filament" d="M15.6 29.4q2.2-6 4.4 0t4.4 0"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="sheet" id="main">
+
+    <div class="page-head">
+      <p class="page-head__kicker">About</p>
+      <h1>I came to machine learning through shipping, not through a course.</h1>
+      <p class="page-head__sub">Which is why the first thing I build is always the thing that tells me whether the rest of it works.</p>
+    </div>
+
+    <section class="section">
+      <div class="column">
+        <p class="lede dropcap">For two years I have been the person who owns a national platform's backend, its security posture and its releases. That job teaches you a specific kind of caution: you cannot tell whether something is working by looking at it, and the failures that hurt are the ones that do not announce themselves.</p>
+      </div>
+
+      <figure class="wide">
+        <div class="ph__box" style="--ar: 3 / 2">
+          <span class="ph__size">1616 × 1077 · export 2× · portrait or desk</span>
+          <span class="ph__brief">A portrait, or the desk where the work happens. Warm, natural light, matching the paper temperature. Honest rather than corporate — this page is the one place a reader is looking for a person rather than a result.</span>
+        </div>
+        <figcaption>Chennai, 2026.</figcaption>
+      </figure>
+
+      <div class="column">
+        <h2 id="route">How I got here</h2>
+
+        <p>I finished a B.Tech in Computer Science at Amrita Vishwa Vidyapeetham in 2024 and joined C-DAC Chennai as a project associate. The work was full-stack and then quickly more than that: React and Next.js front-ends, a Python and FastAPI backend, an analytics layer, an integration with an external logistics system, and eventually the security hardening and release engineering that decide whether any of it is allowed to run.</p>
+
+        <aside class="note">
+          <p>C-DAC is a government R&amp;D organisation. The platform I work on serves about 2,500 people and had to earn CERT-In "Safe to Host" certification before it could go live.</p>
+        </aside>
+
+        <p>The move toward machine learning started with a Chrome extension. I wanted to know whether a link was dangerous before clicking it, which sounds like a classification problem and mostly is. My first attempt was a fine-tuned transformer, and it was good enough to fool me for a while — until a domain-grouped evaluation showed it had learned which hosts appeared in which class rather than anything about URLs.</p>
+
+        <p>Throwing that away and shipping a logistic regression instead is the moment the rest of this makes sense from. The lesson was not "small models are better." It was that I had had no way of knowing which model was better until I built one, and that building it should have come first.</p>
+
+        <h2 id="method">How I work</h2>
+
+        <p>Two habits, both borrowed and both kept because they have caught me being wrong.</p>
+
+        <h3>Predict before you run</h3>
+
+        <p>Before an experiment, I write down what I expect to happen. The gap between the prediction and the result is where the learning is, and several of the predictions on this site were wrong on purpose — the widened candidate pile that made retrieval worse is the clearest one.</p>
+
+        <h3>Explain it back</h3>
+
+        <p>A concept does not count as learned until I can rebuild it from scratch. Cosine similarity got computed on paper with toy vectors before NumPy was allowed near it; BM25 was derived from three plain-language ideas before its formula was named; retrieval was a loop over all 1,330 verses before it was anything faster.</p>
+
+        <aside class="note">
+          <p>The corollary is deleting things. An approximate-nearest-neighbour index was removed from Kural RAG entirely: at 1,330 verses an exact scan takes 4 ms, so the index would have traded real accuracy for speed nobody needed.</p>
+        </aside>
+
+        <p>The thread through both is the same as the thread through the security work: a claim nothing checks is a wish. If a rule matters, something automated has to enforce it, because a plan to be careful is not a control.</p>
+
+        <h2 id="stack">What I use</h2>
+
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr><th>area</th><th>tools</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowhead">ML &amp; retrieval</td><td>PyTorch, HuggingFace Transformers, sentence-transformers, scikit-learn, NumPy, LaBSE, cross-encoder reranking, BM25, HyDE, hybrid dense + sparse retrieval</td></tr>
+              <tr><td class="rowhead">Evaluation</td><td>Harness design, recall@k and precision@k, MRR, McNemar's exact test, ablation studies, data-leakage auditing, calibration analysis</td></tr>
+              <tr><td class="rowhead">LLMs</td><td>Sarvam, Gemini, Qwen3, llama.cpp, prompt engineering, response caching, cost benchmarking</td></tr>
+              <tr><td class="rowhead">Backend &amp; data</td><td>Python, FastAPI, Uvicorn, Node.js, PostgreSQL, SQL, Firebase, WebSockets</td></tr>
+              <tr><td class="rowhead">Frontend</td><td>TypeScript, React, Next.js 15, Redux Toolkit, Tailwind</td></tr>
+              <tr><td class="rowhead">Production</td><td>Docker, CI/CD, Linux, structured JSONL logging, distributed request tracing, circuit breakers, graceful degradation, GCP, Vercel</td></tr>
+              <tr><td class="rowhead">Testing &amp; security</td><td>pytest, Jest, load testing, VAPT, OWASP remediation, secret-handling audits</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="dim">A list of tools is the least interesting thing on this site. What each one was chosen over, and why, is in the <a class="link" href="/work/">case studies</a>.</p>
+
+        <h2 id="want">What I'm looking for</h2>
+
+        <p>Applied ML and ML-engineering work — retrieval, evaluation, and systems where somebody has to be accountable for whether the number is real. I am useful on the unglamorous half of that: the harness, the logging, the degradation path, the thing that tells you the model got worse before a user does.</p>
+
+        <p>I am in Chennai and open to remote. The quickest way to reach me is <a class="link" href="mailto:vikashvanchi@gmail.com">vikashvanchi@gmail.com</a>.</p>
+
+        <a class="backlink" href="/">← Home</a>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <span>© 2026 Vanchi Vikash P M · Chennai, India</span>
+      <span>
+        <a href="/resume.html">Résumé</a> ·
+        <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      </span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="/ledger.js" defer></script>
+</body>
+</html>

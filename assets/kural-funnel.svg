@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg style="color:#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1616 808" width="1616" height="808">
+        <defs>
+          <pattern id="f2h" width="16" height="16" patternUnits="userSpaceOnUse">
+            <path d="M-4,4 L4,-4 M0,16 L16,0 M12,20 L20,12" style="fill: none; stroke: currentcolor; stroke-width: 1.4; opacity: 0.34;"/>
+          </pattern>
+          <pattern id="f2d" width="7" height="7" patternUnits="userSpaceOnUse">
+            <path d="M-2,2 L2,-2 M0,7 L7,0 M5,9 L9,5" style="fill: none; stroke: currentcolor; stroke-width: 1.3; opacity: 0.5;"/>
+          </pattern>
+        </defs>
+
+        <text x="130" y="62" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 34px; font-weight: 600;">Where the correct verse survives, and where it is lost</text>
+        <text x="130" y="102" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; opacity: 0.55;">233 benchmark questions · a stage counts if at least one correct verse is still present</text>
+
+        <text x="46" y="398" fill="currentColor" transform="rotate(-90 46 398)" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.6;">share of the 233 questions where</text>
+        <text x="80" y="398" fill="currentColor" transform="rotate(-90 80 398)" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.6;">a correct verse is still present</text>
+
+        <polygon points="370,138 684,138 684,179.6 444,179.6" style="fill: url(&quot;#f2h&quot;); stroke: currentcolor; stroke-width: 1; opacity: 0.9;"/>
+        <polygon points="684,179.6 998,179.6 998,252.4 758,252.4" style="fill: url(&quot;#f2h&quot;); stroke: currentcolor; stroke-width: 1; opacity: 0.9;"/>
+        <polygon points="998,252.4 1312,252.4 1312,366.8 1072,366.8" style="fill: url(&quot;#f2d&quot;); stroke: currentcolor; stroke-width: 1.6;"/>
+
+        <polygon points="130,138 370,138 444,179.6 684,179.6 758,252.4 998,252.4 1072,366.8 1312,366.8 1312,658 130,658" style="fill: none; stroke: currentcolor; stroke-width: 2.4;"/>
+
+        <path d="M444,179.6 V658 M758,252.4 V658 M1072,366.8 V658" style="stroke: currentcolor; stroke-width: 1; opacity: 0.35;"/>
+
+        <text x="250" y="200" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">the corpus</text>
+        <text x="250" y="288" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 64px; text-anchor: middle;">1,330</text>
+        <text x="250" y="328" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle; opacity: 0.7;">verses</text>
+        <text x="250" y="410" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 40px; text-anchor: middle; opacity: 0.4;">100%</text>
+        <text x="250" y="444" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.4;">by definition</text>
+
+        <text x="564" y="222" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">50 candidates</text>
+        <text x="564" y="342" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 88px; text-anchor: middle;">92%</text>
+        <text x="564" y="384" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 30px; text-anchor: middle; opacity: 0.65;">214 / 233</text>
+
+        <text x="878" y="294" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">5 shown</text>
+        <text x="878" y="414" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 88px; text-anchor: middle;">78%</text>
+        <text x="878" y="456" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 30px; text-anchor: middle; opacity: 0.65;">182 / 233</text>
+
+        <text x="1192" y="408" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 32px; text-anchor: middle;">first result</text>
+        <text x="1192" y="528" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 88px; text-anchor: middle;">56%</text>
+        <text x="1192" y="570" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 30px; text-anchor: middle; opacity: 0.65;">131 / 233</text>
+
+        <path d="M407,658 V680 M721,658 V680 M1035,658 V680" style="stroke: currentcolor; stroke-width: 1.6;"/>
+
+        <path d="M573,698 V798 M887,698 V798" style="stroke: currentcolor; stroke-width: 1; opacity: 0.3;"/>
+
+        <text x="407" y="714" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 30px; font-weight: 600; text-anchor: middle;">stage one</text>
+        <text x="407" y="746" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">scores all 1,330 exactly</text>
+        <text x="407" y="774" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">embeddings + keywords</text>
+        <text x="407" y="800" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">+ chapter signal</text>
+
+        <text x="721" y="714" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 30px; font-weight: 600; text-anchor: middle;">cross-encoder</text>
+        <text x="721" y="746" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">reads question + verse</text>
+        <text x="721" y="774" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">as a pair</text>
+        <text x="721" y="800" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">and keeps five</text>
+
+        <text x="1035" y="714" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 30px; font-weight: 600; text-anchor: middle;">same reranker</text>
+        <text x="1035" y="746" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; text-anchor: middle; opacity: 0.65;">orders those five</text>
+
+        <path d="M1312,252.4 H1348 M1312,366.8 H1348" style="stroke: currentcolor; stroke-width: 1.2; stroke-dasharray: 5, 5; opacity: 0.6;"/>
+        <path d="M1348,252.4 H1366 V366.8 H1348" style="fill: none; stroke: currentcolor; stroke-width: 2.6;"/>
+
+        <text x="1348" y="232" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; font-weight: 600;">where it is lost</text>
+        <text x="1386" y="338" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 76px;">22%</text>
+        <text x="1386" y="390" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px;">in the five,</text>
+        <text x="1386" y="420" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px;">but not first</text>
+        <text x="1386" y="458" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; opacity: 0.6;">51 of 233</text>
+      </svg>

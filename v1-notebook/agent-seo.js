@@ -72,8 +72,8 @@
 
     // ── Agent-discoverable links ──────────────────────────────────────
     const links = [
-      ["alternate", "llms.txt",   "text/plain", "LLM-readable summary"],
-      ["alternate", "resume.txt", "text/plain", "Plain-text resume"]
+      ["alternate", "/llms.txt",   "text/plain", "LLM-readable summary"],
+      ["alternate", "/resume.txt", "text/plain", "Plain-text resume"]
     ];
     for (const [rel, href, type, title] of links) {
       if (document.querySelector(`link[rel="${rel}"][href="${href}"]`)) continue; // already static

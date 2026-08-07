@@ -1,41 +1,117 @@
 VANCHI VIKASH P M
-Software Engineer · Chennai, India
-+91 6382285582 · vikashvanchi@gmail.com
-https://vanjivikash.vercel.app · github.com/vanchivikash · leetcode.com/u/vanjivikash
+Software Engineer · Full-Stack | Applied ML | Security
+Chennai, Tamil Nadu · +91 6382285582 · vikashvanchi@gmail.com
+https://vanjivikash.vercel.app · linkedin.com/in/vanjivikash · github.com/vanji-creator
 
-EDUCATION
-  Amrita Vishwa Vidyapeetham — B.Tech, Computer Science and Engineering
-  Oct 2020 – April 2024
+SUMMARY
+  Engineer building applied ML and retrieval systems end to end — evaluation harness
+  first, then measured improvement. Shipped an on-device URL classifier to the Chrome
+  Web Store (98.6% accuracy, 0.3% FPR) and built a cross-lingual RAG system whose
+  retrieval accuracy went from 44 to 97 out of 100 on a hand-built golden set across
+  six independently measured changes. ~2 years production engineering on Government
+  of India platforms serving 2,500+ users in Python/FastAPI, React and PostgreSQL.
 
 EXPERIENCE
   Centre for Development of Advanced Computing (C-DAC), Chennai
-  Project Associate · July 2024 – Present
-  - Built two government portals (mail client, drafting system) in React/Next.js for 500+ users; unit-tested with Jest.
-  - Led end-to-end production deployment of Supply Order Monitoring Portal (SOMP) for Government of India: 99.9% uptime, "Safe to Host" certification from CERT-In, security clearance from CIRA.
-  - Resolved 15+ critical VAPT findings (XSS, CSRF, clickjacking) via HSTS, CSP, SSL/TLS hardening; reduced risk score by 85%.
+  Project Associate — Software Engineer · Jul 2024 – Present
+  - Built the Python/FastAPI backend for the Supply Order Monitoring Portal, a national
+    system serving 2,500+ users, including the analytics layer for delivery-delay
+    prediction, demand forecasting and defaulter identification.
+  - Architected and shipped React/Next.js front-ends for two further production portals,
+    and designed the data-exchange interface to an external inventory and logistics
+    system — record mapping, API contract, error handling and reconciliation.
+  - Planned and executed test strategy across the stack: automated pytest and Jest unit
+    tests, user-acceptance testing with client stakeholders, and load testing.
+  - Led security hardening — closed 25+ critical VAPT findings (XSS, CSRF, clickjacking)
+    and implemented HSTS, CSP and SSL/TLS controls, earning CERT-In "Safe to Host"
+    certification and cutting the assessed risk score by 85%.
+  - Owned CI/CD and production release engineering on on-premise Linux/Apache
+    infrastructure, sustaining 99.9% uptime across the portal estate.
 
 PROJECTS
+  Kural RAG — Cross-Lingual Retrieval over Classical Tamil
+  Python, sentence-transformers, LaBSE, FastAPI, Next.js, TypeScript
+  - Answers plain-English questions from 1,330 classical Tamil verses and cites the
+    specific verses behind every claim.
+  - Retrieval accuracy 44 -> 97 out of 100 on a hand-labelled golden set across six
+    independently measured changes, each verified with McNemar's exact test.
+  - On the combined 233-question set: a correct verse appears in the five shown for
+    78% of questions, and the first verse shown is correct for 56%. Both numbers are
+    always reported together; quoting only the higher one misstates what a user sees.
+  - Hand-labelled the 233-question evaluation harness before any optimisation, then
+    validated every change against it — and declined a 15-point improvement that
+    landed at p = 0.0534 rather than claim it.
+  - Hybrid retrieval combining LaBSE dense embeddings with a from-scratch BM25 index,
+    cross-encoder reranking over the top 50, chapter-level signal blending, and HyDE
+    query rewriting to close the vocabulary gap between modern questions and
+    19th-century translations.
+  - Found and documented three data-leakage incidents in the evaluation pipeline,
+    including 121 of 798 generated questions that were verbatim copies of the test set.
+  - Structured JSONL logging with distributed request tracing across the Next.js
+    frontend and FastAPI service, prompt-keyed persistent cache, and a circuit breaker
+    that degrades to un-rewritten search with the degraded state surfaced to the user.
+  - Generation is wired with checked citations but not yet adversarially tested.
+
+  Clikk — On-Device Malicious URL Detection
+  Python, scikit-learn, JavaScript, Chrome Extension (Manifest V3)
+  chromewebstore.google.com/detail/ebnadedjcjlnhbdcfogbglecfoimhmom
+  github.com/vanji-creator/linkguard
+  - Published on the Chrome Web Store; screens links for phishing and malware before
+    they open, with the classifier running on-device so most URLs never leave the browser.
+  - Discarded a fine-tuned SecureBERT implementation after evaluation showed it had
+    learned dataset shortcuts rather than URL structure and degraded on unseen domains.
+  - Audited public training data against primary threat feeds, found systematically
+    incorrect labels in a widely used Kaggle dataset (48,009 phishing->benign and
+    47,903 benign->phishing swaps), and rebuilt the training set from URLhaus,
+    OpenPhish and ThreatFox.
+  - Shipped a TF-IDF character n-gram (3-5) + logistic regression pipeline chosen
+    against real deployment constraints — offline, lightweight, in-browser: 98.6%
+    accuracy at 0.3% FPR under domain-grouped evaluation, ~0.2 ms per URL.
+  - Reimplemented inference in dependency-free JavaScript and verified it against the
+    Python pipeline across all 5,249 test URLs — identical predictions, identical
+    confusion matrix, max probability difference under 1e-7.
+
   Chatflow — Red-Team Orchestration Platform · Nov 2025
-    Real-time web terminal + visual flow builder for automated VAPT. Low-latency WebSocket
-    backend orchestrating Nmap, Nuclei, Gobuster; streams stdout into structured findings.
-    TS · React · Node.js · Socket.IO · Docker — chat-flow-app.vercel.app
+  TypeScript, React, Node.js, Socket.IO, Docker · chat-flow-app.vercel.app
+  - Dual-mode platform combining a real-time web terminal and a visual flow builder,
+    with a low-latency WebSocket backend orchestrating Nmap, Nuclei and Gobuster and
+    parsing raw stdout into structured findings.
 
   Text Explainer (gExplain) — Chrome Extension · Oct–Nov 2025
-    AI-powered text explanation with universal site compatibility (Gmail, GitHub, iframes),
-    4.8/5 rating, 1000+ daily explanations, 200ms avg response. Gemini API + SPA detection.
-    JS (ES6+) · REST — gexplain.vercel.app
+  JavaScript (ES6+), Gemini API, Chrome APIs · gexplain.vercel.app
+  - Explains selected text in place with universal site compatibility, including Gmail,
+    GitHub and nested iframes; content-script injection with all-frames support and
+    SPA navigation detection via the webNavigation API.
 
-  MyStream — Video Streaming App · Apr–May 2024
-    YouTube Data API client with debounced/cached search and polling-based live chat.
-    React · Redux Toolkit · Tailwind — mystream-sigma.vercel.app
+  MyStream — Video Streaming Client · Apr–May 2024
+  React, Redux Toolkit, Tailwind, React Router · mystream-sigma.vercel.app
+  - YouTube Data API client with debounced search, cached autocomplete, and a
+    polling-based live chat.
 
 SKILLS
-  Languages           TypeScript, JavaScript (ES6+), Python, SQL
-  Frontend            React, Next.js, Redux Toolkit, Tailwind, HTML5, CSS3
-  Backend             Node.js, Socket.IO, REST, Odoo 14, Firebase
-  Security & DevOps   Linux, Apache, SSL/TLS, Burp Suite, VAPT, CI/CD
-  Tools               Git, Postman, Webpack, VS Code, Chrome DevTools, Jest
+  ML & Retrieval      PyTorch, HuggingFace Transformers, sentence-transformers,
+                      scikit-learn, NumPy, LaBSE, cross-encoder reranking, BM25, HyDE,
+                      hybrid dense + sparse retrieval, RAG pipelines, embeddings
+  Evaluation          Evaluation harness design, recall@k / precision@k, MRR,
+                      McNemar's exact test, ablation studies, data-leakage auditing,
+                      calibration analysis
+  LLMs                Sarvam, Google Gemini, Qwen3, llama.cpp, prompt engineering,
+                      response caching, cost benchmarking
+  Languages           Python, TypeScript, JavaScript (ES6+), SQL
+  Backend & Data      FastAPI, Uvicorn, Node.js, REST API design, PostgreSQL, SQL,
+                      Firebase, WebSockets (Socket.IO)
+  Frontend            React.js, Next.js 15, Redux Toolkit, Tailwind CSS, TypeScript
+  Production Eng      Docker, CI/CD, Git, Linux, structured JSONL logging, distributed
+                      request tracing, circuit breakers, graceful degradation, GCP, Vercel
+  Testing & Security  pytest, Jest, load/performance testing, VAPT, OWASP remediation,
+                      secret-handling audits
+
+EDUCATION
+  Amrita Vishwa Vidyapeetham — B.Tech, Computer Science and Engineering
+  Oct 2020 – Apr 2024
 
 CURRENTLY LEARNING
-  Math for ML · Deep Learning (Goodfellow) · Karpathy's Zero-to-Hero
-  Hugging Face Transformers · PyTorch · Agent systems · Applied LLM eng
+  Deep Learning (Goodfellow, Bengio, Courville) · Neural Networks: Zero to Hero
+  (Karpathy) · Mathematics for Machine Learning (Deisenroth, Faisal, Ong) ·
+  PyTorch fundamentals · Hugging Face Transformers · Attention Is All You Need
+  (Vaswani et al., 2017)

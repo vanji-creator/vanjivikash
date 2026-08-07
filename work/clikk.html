@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Clikk — Vanchi Vikash P M</title>
+<link rel="canonical" href="https://vanjivikash.vercel.app/work/clikk.html"/>
+<meta name="description" content="A Chrome extension that screens links for phishing and malware on-device. 98.6% accuracy at 0.3% false positives under domain-grouped evaluation — and the fine-tuned transformer I threw away to get there."/>
+<script>
+try {
+  var t = localStorage.getItem("ledger.theme");
+  if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.dataset.theme = t;
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ledger.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="shell">
+
+  <aside class="ident">
+    <a class="ident__name" href="/">Vanchi Vikash P M</a>
+    <p class="ident__role">Applied ML and retrieval.<br>Chennai, India.</p>
+    <nav class="ident__nav" aria-label="On this page">
+      <a class="ident__back" href="/work/">All work</a>
+      <a href="#discarded">The model I discarded</a>
+      <a href="#poisoned">The dataset was poisoned</a>
+      <a href="#parity">Proving the port was exact</a>
+      <a href="#verdict">How a verdict is reached</a>
+      <a href="#get">Get it</a>
+    </nav>
+    <p class="ident__label">Elsewhere</p>
+    <div class="ident__links">
+      <a href="/work/">All work</a>
+      <a href="/about.html">About</a>
+      <a href="/resume.html">Résumé</a>
+      <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      <button class="lamp" type="button" data-theme-toggle aria-pressed="false" title="Switch theme">
+        <svg class="lamp__bulb" viewBox="0 0 40 46" width="34" height="39" aria-hidden="true" focusable="false">
+          <g class="lamp__rays">
+            <line x1="20" y1="41.5" x2="20" y2="45"/>
+            <line x1="30.6" y1="36.4" x2="33.2" y2="39"/>
+            <line x1="9.4" y1="36.4" x2="6.8" y2="39"/>
+            <line x1="34" y1="27" x2="37.6" y2="27"/>
+            <line x1="6" y1="27" x2="2.4" y2="27"/>
+          </g>
+          <path class="lamp__cap" d="M15.5 3.2h9v7.3h-9z"/>
+          <line class="lamp__thread" x1="15.5" y1="5.9" x2="24.5" y2="5.9"/>
+          <line class="lamp__thread" x1="15.5" y1="8.4" x2="24.5" y2="8.4"/>
+          <path class="lamp__neck" d="M16.4 10.5 16 16M23.6 10.5 24 16"/>
+          <circle class="lamp__glass" cx="20" cy="27" r="11.4"/>
+          <path class="lamp__filament" d="M15.6 29.4q2.2-6 4.4 0t4.4 0"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="sheet" id="main">
+
+    <div class="page-head">
+      <p class="page-head__kicker">Case study · 2026 · solo</p>
+      <h1>Clikk</h1>
+      <p class="page-head__sub">On-device malicious URL detection, published on the Chrome Web Store</p>
+
+      <div class="scoreboard">
+        <div>
+          <div class="score__value">98.6<span class="unit">%</span></div>
+          <div class="score__label">Accuracy at a 0.3% false-positive rate, grouped by domain</div>
+        </div>
+        <div>
+          <div class="score__value">0.2<span class="unit"> ms</span></div>
+          <div class="score__label">Per URL, offline, inside a browser service worker</div>
+        </div>
+        <div>
+          <div class="score__value">5,249</div>
+          <div class="score__label">URLs replayed through both implementations to prove parity</div>
+        </div>
+        <div>
+          <div class="score__value">1.7<span class="unit"> MB</span></div>
+          <div class="score__label">Shipped model — a sha256-fingerprinted JSON artifact</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="column">
+        <p class="lede dropcap">Clikk checks a link for phishing and malware before you click it. The classifier runs entirely on-device, so almost every URL is decided without leaving the browser. The interesting part is not the model that shipped — it is the one I threw away, and why I could prove that was the right call.</p>
+
+        <h2 id="discarded">The model I discarded</h2>
+
+        <p>I fine-tuned SecureBERT first, because that is what you reach for. It scored well and it was wrong. Audited properly, it had learned shortcuts in the dataset rather than anything about URL structure, and it degraded on domains it had never seen — which is the only condition that matters for a link scanner.</p>
+
+        <aside class="note">
+          <p>Evaluation is domain-grouped, so no domain appears on both sides of the split. URL datasets leak by host, and an ungrouped split flatters you.</p>
+        </aside>
+
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr><th></th><th>Fine-tuned SecureBERT</th><th class="ship">TF-IDF n-gram + logistic regression — shipped</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rowhead">What it learned</td>
+                <td>Dataset shortcuts, not URL structure</td>
+                <td>Character patterns in the URL itself</td>
+              </tr>
+              <tr>
+                <td class="rowhead">On unseen domains</td>
+                <td>Degraded</td>
+                <td class="num">98.6% at 0.3% FPR</td>
+              </tr>
+              <tr>
+                <td class="rowhead">Runs in the browser</td>
+                <td>No</td>
+                <td>Yes — offline, ~0.2 ms per URL</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The shipped model is TF-IDF character n-grams of length three to five feeding a logistic regression, trained on roughly 26,000 engineered URLs with per-domain caps. It was chosen small on purpose, against real deployment constraints: it has to run offline inside a Manifest V3 service worker with zero dependencies. A transformer cannot meet that constraint; this model does.</p>
+
+        <p>"Suspicious" is a post-hoc probability band between 0.30 and 0.70, not a training label — so model uncertainty fails safe to <em>be careful</em>, never to a confident guess.</p>
+
+        <h2 id="poisoned">The dataset was poisoned</h2>
+
+        <p>Auditing the public training data against primary threat feeds turned up label swaps at a scale that could not be noise, in a Kaggle dataset used across dozens of public notebooks. It is provable by arithmetic: almost all of its overlap with trusted feeds disagreed, and disagreed symmetrically.</p>
+
+        <aside class="note">
+          <span class="note__value">48,009 / 47,903</span>
+          <p>Phishing relabelled benign, and benign relabelled phishing. A symmetric swap that large is not error — it is a corrupted file that a lot of people trained on.</p>
+        </aside>
+
+        <p>I documented the forensics and rebuilt the training set from primary sources: URLhaus, OpenPhish and ThreatFox.</p>
+      </div>
+
+      <figure class="wide">
+        <div class="ph__box" style="--ar: 16 / 9">
+          <span class="ph__size">1616 × 909 · export 2× · chart</span>
+          <span class="ph__brief">The label-swap forensics: overlap between the Kaggle dataset and the trusted feeds, split into agree / disagree, with the two disagreement directions at 48,009 and 47,903 shown as near-mirror bars. The symmetry is the whole argument — make it the thing the eye lands on.</span>
+        </div>
+        <figcaption>Why it reads as corruption rather than noise: the disagreement is almost perfectly symmetric.</figcaption>
+      </figure>
+
+      <div class="column">
+        <h2 id="parity">Proving the port was exact</h2>
+
+        <p>The trained weights are exported to a 1.7 MB JSON artifact with a sha256 fingerprint, and inference is reimplemented in dependency-free JavaScript so it can live in the extension. A reimplementation that is nearly right is a silent bug, so it was checked rather than assumed: the Python and JavaScript pipelines were run against the full 5,249-URL test set and compared.</p>
+
+        <aside class="note">
+          <span class="note__value">2 × 10⁻⁸</span>
+          <p>Worst probability difference across the whole test set. Zero verdict flips, identical confusion matrix. The model loads once in ~250 ms.</p>
+        </aside>
+
+        <h2 id="verdict">How a verdict is reached</h2>
+
+        <p>The scan pipeline is layered so that almost all verdicts stay local, and each layer only hands on what it cannot decide:</p>
+
+        <ol>
+          <li><strong>In-memory cache</strong> — one-hour TTL, so repeat verdicts return instantly.</li>
+          <li><strong>Local blocklists</strong> — URLhaus, OpenPhish and ThreatFox in IndexedDB, refreshed daily.</li>
+          <li><strong>Heuristics</strong> — India-specific scam patterns: fake KYC and UPI shapes, sketchy TLDs, deep subdomains.</li>
+          <li><strong>The on-device model</strong> — decides alone when it is at least 90% confident.</li>
+          <li><strong>VirusTotal</strong> — a network call only for the uncertain remainder, and only with your own key.</li>
+        </ol>
+
+        <p>Privacy is a consequence of that ordering rather than a policy on top of it: no accounts, no analytics, telemetry off by default.</p>
+      </div>
+
+      <figure class="wide">
+        <div class="ph__box" style="--ar: 3 / 2">
+          <span class="ph__size">1616 × 1077 · export 2× · flow diagram</span>
+          <span class="ph__brief">The five-layer scan pipeline as a funnel, showing roughly what share of URLs each layer resolves and how few reach the network call at the bottom. The visual argument is that the last box is almost never used.</span>
+        </div>
+        <figcaption>Each layer only passes on what it cannot decide. The network is the last resort, not the default.</figcaption>
+      </figure>
+
+      <div class="column">
+        <figure>
+          <img src="/assets/clikk/verdict-safe.png" alt="Clikk verdict card marking a link safe, with an on-device confidence meter" loading="lazy"/>
+          <figcaption>The click-time verdict card — verdict, confidence, and the source of the call, before you navigate.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="/assets/clikk/badges-results.png" alt="Search results with Clikk safety badges beside each link" loading="lazy"/>
+          <figcaption>Links badged at page load; hover pre-scans, so the verdict feels instant on click.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="/assets/clikk/popup-dashboard.png" alt="Clikk popup dashboard showing the on-device model active, scan counts and blocklist size" loading="lazy"/>
+          <figcaption>The popup — on-device model active, local blocklist size, VirusTotal off until you add a key.</figcaption>
+        </figure>
+
+        <h2 id="get">Get it</h2>
+
+        <p>
+          <a class="link" href="https://chromewebstore.google.com/detail/ebnadedjcjlnhbdcfogbglecfoimhmom" target="_blank" rel="noopener">On the Chrome Web Store</a>
+          &nbsp;·&nbsp;
+          <a class="link" href="https://github.com/vanji-creator/linkguard" target="_blank" rel="noopener">Source on GitHub</a>
+        </p>
+
+        <a class="backlink" href="/work/">← All work</a>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <span>© 2026 Vanchi Vikash P M · Chennai, India</span>
+      <span>
+        <a href="https://github.com/vanji-creator" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="mailto:vikashvanchi@gmail.com">Email</a>
+      </span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="/ledger.js" defer></script>
+</body>
+</html>

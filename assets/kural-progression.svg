@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg style="color:#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1616 909" width="1616" height="909">
+        <text x="120" y="58" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 34px; font-weight: 600;">The progression, one change at a time</text>
+        <text x="120" y="96" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; opacity: 0.55;">golden set, score out of 100 · p values from McNemar's exact test</text>
+
+        <path d="M120,539.8 H1496 M120,470.5 H1496 M120,401.3 H1496 M120,332.1 H1496 M120,262.8 H1496 M120,193.6 H1496 M120,124.4 H1496" style="stroke: currentcolor; stroke-width: 1; stroke-dasharray: 3, 8; opacity: 0.28;"/>
+        <path d="M120,124.4 V609 M120,609 H1496" style="stroke: currentcolor; stroke-width: 1.6; opacity: 0.75;"/>
+        <path d="M108,539.8 H120 M108,470.5 H120 M108,401.3 H120 M108,332.1 H120 M108,262.8 H120 M108,193.6 H120 M108,124.4 H120" style="stroke: currentcolor; stroke-width: 1.6; opacity: 0.75;"/>
+
+        <text x="96" y="548" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: end; opacity: 0.6;">40</text>
+        <text x="96" y="479" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: end; opacity: 0.6;">50</text>
+        <text x="96" y="410" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: end; opacity: 0.6;">60</text>
+        <text x="96" y="341" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: end; opacity: 0.6;">70</text>
+        <text x="96" y="272" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: end; opacity: 0.6;">80</text>
+        <text x="96" y="202" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: end; opacity: 0.6;">90</text>
+        <text x="96" y="133" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: end; opacity: 0.6;">100</text>
+
+        <path d="M120,512.1 H292 V456.7 H464 V339.0 H636 V297.5 H808 V228.3 H980 V193.6 H1152 V172.8 H1324 V145.1 H1496" style="fill: none; stroke: currentcolor; stroke-width: 3.6; stroke-linejoin: miter;"/>
+
+        <text x="206" y="552" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">44</text>
+        <text x="378" y="497" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">52</text>
+        <text x="550" y="379" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">69</text>
+        <text x="722" y="338" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">75</text>
+        <text x="894" y="268" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">85</text>
+        <text x="1066" y="234" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">90</text>
+        <text x="1238" y="213" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">93</text>
+        <text x="1410" y="185" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 36px; text-anchor: middle;">97</text>
+
+        <circle cx="980" cy="211" r="11" style="fill: none; stroke: currentcolor; stroke-width: 2.4;"/>
+        <text x="956" y="204" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 30px; text-anchor: end;">†</text>
+
+        <text x="150" y="180" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; opacity: 0.8;">†  85 → 90 could not be established at 100</text>
+        <text x="150" y="212" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; opacity: 0.8;">questions (p = 0.125). The set was grown to</text>
+        <text x="150" y="244" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; opacity: 0.8;">233, where it settled at p = 0.0129.</text>
+
+        <path d="M292,609 V636 M636,609 V636 M980,609 V636 M1324,609 V636" style="stroke: currentcolor; stroke-width: 1.6;"/>
+        <path d="M464,609 V752 M808,609 V752 M1152,609 V752" style="stroke: currentcolor; stroke-width: 1.6;"/>
+
+        <text x="292" y="668" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">add a chapter-level</text>
+        <text x="292" y="700" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">signal</text>
+        <text x="292" y="738" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">p = 0.039</text>
+
+        <text x="636" y="668" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">hybrid keyword scoring</text>
+        <text x="636" y="700" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">at weight 0.3</text>
+        <text x="636" y="738" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">52→75  p = 0.000</text>
+
+        <text x="980" y="668" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">hand-written chapter</text>
+        <text x="980" y="700" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">descriptions  †</text>
+        <text x="980" y="738" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">p = 0.0129</text>
+
+        <text x="1324" y="668" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">modernised corpus</text>
+        <text x="1324" y="700" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">prose</text>
+        <text x="1324" y="738" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">p = 0.0391</text>
+
+        <text x="464" y="784" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">strip question words</text>
+        <text x="464" y="816" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">from the query</text>
+        <text x="464" y="854" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">—</text>
+
+        <text x="808" y="784" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">cross-encoder rerank</text>
+        <text x="808" y="816" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">of the top 50</text>
+        <text x="808" y="854" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">p = 0.006</text>
+
+        <text x="1152" y="784" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">HyDE query</text>
+        <text x="1152" y="816" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 28px; text-anchor: middle;">rewriting</text>
+        <text x="1152" y="854" fill="currentColor" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 26px; text-anchor: middle; opacity: 0.65;">—</text>
+
+        <text x="120" y="894" fill="currentColor" style="font-family: &quot;Instrument Sans&quot;, sans-serif; font-size: 26px; opacity: 0.5;">—  no paired test reported for this step on its own</text>
+      </svg>
