@@ -1,4 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Vanchi Vikash">
-  <rect width="100" height="100" rx="24" fill="#e85a1c"/>
-  <path d="M22 27 L41 27 L50 56 L59 27 L78 27 L50 78 Z" fill="#f8f2e6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Vanchi Vikash P M">
+  <!-- The bulb from the site's theme switch, reduced to a silhouette so it
+       still reads at 16px. A solid tile carries it against any browser
+       chrome; the two colours swap with the OS scheme, matching the site's
+       pure black-and-white palette. -->
+  <style>
+    .tile   { fill: #000; }
+    .mark   { fill: #fff; }
+    @media (prefers-color-scheme: dark) {
+      .tile   { fill: #fff; }
+      .mark   { fill: #000; }
+    }
+  </style>
+
+  <rect class="tile" width="100" height="100" rx="22"/>
+
+  <g class="mark">
+    <!-- screw cap, overlapping the glass so the two read as one shape -->
+    <rect x="40" y="17" width="20" height="17" rx="2.5"/>
+    <!-- glass -->
+    <circle cx="50" cy="57" r="24"/>
+  </g>
+
 </svg>
