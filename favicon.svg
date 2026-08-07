@@ -1,24 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Vanchi Vikash P M">
-  <!-- The bulb from the site's theme switch, reduced to a silhouette so it
-       still reads at 16px. A solid tile carries it against any browser
-       chrome; the two colours swap with the OS scheme, matching the site's
-       pure black-and-white palette. -->
+  <!-- Just the V. No tile: at tab size a solid square is the loudest thing in
+       the strip, and the letterform alone is lighter and reads as a mark
+       rather than an app icon. The fill flips with the OS scheme so it keeps
+       contrast against either browser chrome. -->
   <style>
-    .tile   { fill: #000; }
-    .mark   { fill: #fff; }
-    @media (prefers-color-scheme: dark) {
-      .tile   { fill: #fff; }
-      .mark   { fill: #000; }
-    }
+    .v { fill: #000; }
+    @media (prefers-color-scheme: dark) { .v { fill: #fff; } }
   </style>
-
-  <rect class="tile" width="100" height="100" rx="22"/>
-
-  <g class="mark">
-    <!-- screw cap, overlapping the glass so the two read as one shape -->
-    <rect x="40" y="17" width="20" height="17" rx="2.5"/>
-    <!-- glass -->
-    <circle cx="50" cy="57" r="24"/>
-  </g>
-
+  <path class="v" d="M8 18 L33 18 L50 60 L67 18 L92 18 L50 90 Z"/>
 </svg>
