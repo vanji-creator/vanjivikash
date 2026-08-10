@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg style="color:#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1616 692" width="1616" height="692">
+  <defs>
+    <pattern id="pv-h" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M-3,3 L3,-3 M0,14 L14,0 M11,17 L17,11" style="fill:none;stroke:currentcolor;stroke-width:1.3;opacity:.3"/>
+    </pattern>
+  </defs>
+
+  <text x="120" y="58" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:34px;font-weight:600">What I let myself claim</text>
+  <text x="120" y="96" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:26px;opacity:.55">every significance test reported on this site, on one axis</text>
+
+  <!-- past the threshold: nothing in here is claimed as a finding -->
+  <rect x="1273.3" y="248" width="216.7" height="152" style="fill:url(#pv-h);stroke:currentcolor;stroke-width:1;opacity:.9"/>
+  <text x="1490" y="228" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:24px;text-anchor:end;opacity:.6">not established</text>
+
+  <path d="M1273.3,232 V424" style="stroke:currentcolor;stroke-width:2;stroke-dasharray:7,7"/>
+  <text x="1273.3" y="212" fill="currentColor" style="font-family:'IBM Plex Mono',monospace;font-size:30px;text-anchor:middle">0.05</text>
+
+  <!-- axis. Scale labels sit outside the plot so they cannot foul the
+       leader lines dropping from the first point. -->
+  <path d="M190,400 H1490" style="stroke:currentcolor;stroke-width:2.4"/>
+  <path d="M190,392 V408 M1490,392 V408" style="stroke:currentcolor;stroke-width:2.4"/>
+  <text x="170" y="409" fill="currentColor" style="font-family:'IBM Plex Mono',monospace;font-size:24px;text-anchor:end;opacity:.5">0</text>
+  <text x="1510" y="409" fill="currentColor" style="font-family:'IBM Plex Mono',monospace;font-size:24px;opacity:.5">0.06</text>
+
+  <g style="font-family:'IBM Plex Mono',monospace;font-size:29px;text-anchor:middle">
+    <text x="192.2" y="358" fill="currentColor">0.0001</text>
+    <text x="320"   y="358" fill="currentColor">0.006</text>
+    <text x="469.5" y="358" fill="currentColor">0.0129</text>
+    <text x="1035"  y="358" fill="currentColor">0.039</text>
+  </g>
+  <g style="fill:currentcolor">
+    <circle cx="192.2" cy="400" r="9"/>
+    <circle cx="320"   cy="400" r="9"/>
+    <circle cx="469.5" cy="400" r="9"/>
+    <circle cx="1035"  cy="400" r="9"/>
+  </g>
+
+  <!-- leaders staggered to two depths so the labels clear each other -->
+  <path d="M192.2,412 V478 M469.5,412 V478 M320,412 V548 M1035,412 V548"
+        style="stroke:currentcolor;stroke-width:1.2;opacity:.45"/>
+
+  <g style="font-family:'Instrument Sans',sans-serif;font-size:25px;text-anchor:middle">
+    <text x="192.2" y="504" fill="currentColor">a new reranker</text>
+    <text x="469.5" y="504" fill="currentColor">chapter descriptions</text>
+    <text x="320"   y="574" fill="currentColor">cross-encoder rerank</text>
+    <text x="1035"  y="574" fill="currentColor">a chapter-level signal</text>
+  </g>
+
+  <!-- the one that was not claimed -->
+  <circle cx="1347" cy="400" r="10.5" style="fill:none;stroke:currentcolor;stroke-width:3.4"/>
+  <text x="1347" y="358" fill="currentColor" style="font-family:'IBM Plex Mono',monospace;font-size:29px;text-anchor:middle">0.0534</text>
+  <path d="M1347,412 V466" style="stroke:currentcolor;stroke-width:1.2;opacity:.45"/>
+  <text x="1490" y="500" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:600;text-anchor:end">declined</text>
+  <text x="1490" y="534" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:25px;text-anchor:end;opacity:.68">a fifteen-point rewriter gain,</text>
+  <text x="1490" y="564" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:25px;text-anchor:end;opacity:.68">reported as inconclusive</text>
+
+  <text x="120" y="636" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:27px;font-weight:600">Left of the line I called the result real. Right of it I did not.</text>
+  <text x="120" y="672" fill="currentColor" style="font-family:'Instrument Sans',sans-serif;font-size:25px;opacity:.65">The rewriter ships anyway — on latency, which is a different argument, made openly.</text>
+</svg>

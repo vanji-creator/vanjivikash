@@ -341,7 +341,19 @@ system's contents."*
 Monochrome or heavily desaturated. **No stock photography** — a generic developer-
 at-a-laptop image would undercut the whole page.
 
-### C1 · `home-opening.jpg` — 1616 × 692 (2.34:1)
+### C1 · ~~`home-opening.jpg`~~ → `p-values.svg` — ✅ DONE, and no longer a photo
+
+Replaced by a diagram, built 2026-08-07. The reasoning is worth keeping: this slot
+sits between "here's how I work" and "here's the work", on a page that opens *"I can
+tell you what my systems scored, and how I know the number is real."* A workspace
+photograph would have been the only object on the page that was not evidence.
+
+The figure plots every significance test on the site against the 0.05 threshold —
+four claims to the left, and the 15-point rewriter gain at 0.0534 sitting just to the
+right in a hatched band, marked *declined*. It is the page's thesis as one object,
+and it needs no photography.
+
+**Superseded spec** — 1616 × 692 (2.34:1):
 
 Sits directly under the hero on the homepage. This is the one image whose job is to
 make someone keep scrolling. Either:
