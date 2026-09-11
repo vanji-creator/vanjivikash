@@ -9,12 +9,11 @@
 <script>
 try {
   var t = localStorage.getItem("ledger.theme");
-  if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  if (!t) t = "light";   // new visitors start in light; the lamp is how you go dark
   document.documentElement.dataset.theme = t;
 } catch (e) {}
 </script>
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"/>
+<meta name="theme-color" content="#ffffff"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>

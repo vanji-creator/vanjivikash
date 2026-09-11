@@ -16,11 +16,15 @@
   /* The control is a bulb, not a word, so its state lives in aria-pressed
      ("is the light on") and the label names the action. Never write to
      textContent here — it would delete the SVG. */
+  const meta = document.querySelector('meta[name="theme-color"]');
+
   const apply = (theme, persist) => {
     root.dataset.theme = theme;
     if (persist) {
       try { localStorage.setItem(KEY, theme); } catch (_) {}
     }
+    /* The browser chrome follows the page, not the operating system. */
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#000000" : "#ffffff");
     const lit = theme === "dark";
     for (const b of toggles) {
       b.setAttribute("aria-pressed", String(lit));
